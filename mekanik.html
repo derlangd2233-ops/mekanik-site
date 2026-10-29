@@ -1,0 +1,1272 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mekanik | Gestão automotiva</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+        :root{--ink:#e9eef0;--muted:#8d9b9e;--panel:#172124;--panel2:#1c292c;--line:#2b3a3d;--bg:#101719;--accent:#f28b39;--cyan:#57c6b5;--green:#77d39d;--red:#f07e70;--yellow:#eac86d;--shadow:0 18px 50px #07101266}
+        *{box-sizing:border-box}html,body{margin:0;width:100%;min-height:100%;background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif}body{overflow-x:hidden}button,input,select{font:inherit}button{cursor:pointer;border:0;color:inherit}.shell{display:flex;min-height:100vh;width:100%}.sidebar{width:256px;background:#0c1214;border-right:1px solid var(--line);padding:25px 16px;display:flex;flex-direction:column;flex-shrink:0}.brand{display:flex;align-items:center;gap:10px;padding:0 12px 31px;font-family:'Space Grotesk';font-size:20px;letter-spacing:-.5px}.brand-mark{display:grid;place-items:center;width:32px;height:32px;background:var(--accent);color:#182124;border-radius:9px;font-size:18px}.brand-logo{width:32px;height:32px;object-fit:contain;border-radius:9px;background:#121c1e;padding:3px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.04)}.brand small{font-family:'DM Sans';font-size:9px;color:var(--accent);display:block;letter-spacing:1px}.nav-label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#536366;padding:0 12px;margin:14px 0 9px}.nav-item{width:100%;display:flex;align-items:center;gap:12px;background:transparent;text-align:left;padding:11px 12px;color:var(--muted);border-radius:8px;margin:2px 0;font-size:13px}.nav-item:hover,.nav-item.active{background:#1b292c;color:var(--ink)}.nav-item.active{box-shadow:inset 3px 0 var(--accent);color:#fff}.nav-icon{width:18px;text-align:center;color:var(--accent);font-size:16px}.side-foot{margin-top:auto;border-top:1px solid var(--line);padding:17px 12px 0;color:var(--muted);font-size:12px}.user{display:flex;align-items:center;gap:9px;margin-top:13px;color:var(--ink)}.avatar{display:grid;place-items:center;width:29px;height:29px;border-radius:50%;background:#31504f;color:var(--cyan);font-size:11px;font-weight:700}.content{min-width:0;flex:1;width:100%}.topbar{height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 34px;gap:20px}.crumb{color:var(--muted);font-size:12px}.crumb b{color:var(--ink);font-weight:500}.top-actions{display:flex;align-items:center;gap:13px}.search{width:min(290px,28vw);background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:7px;padding:10px 12px 10px 35px;outline:0}.search:focus{border-color:var(--accent)}.search-wrap{position:relative}.search-wrap span{position:absolute;left:12px;top:9px;color:var(--muted)}.circle-btn{width:35px;height:35px;background:var(--panel);border:1px solid var(--line);border-radius:7px;color:var(--muted)}main{padding:31px 34px;width:100%;max-width:none}.page-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:27px}.eyebrow{font-size:10px;letter-spacing:1.7px;text-transform:uppercase;color:var(--accent);margin:0 0 9px;font-weight:700}.page-head h1{font-family:'Space Grotesk';font-size:30px;letter-spacing:-1px;margin:0 0 7px}.sub{color:var(--muted);margin:0;font-size:13px}.primary{background:var(--accent);color:#20282a;border-radius:6px;font-weight:700;padding:11px 16px}.primary:hover{filter:brightness(1.1)}.ghost{background:var(--panel);border:1px solid var(--line);padding:10px 14px;border-radius:6px;color:var(--ink)}.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}.kpi,.panel{background:var(--panel);border:1px solid var(--line);border-radius:9px}.kpi{padding:18px}.kpi-top{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.kpi-icon{color:var(--accent);font-size:17px}.kpi strong{display:block;font-family:'Space Grotesk';font-size:25px;margin:14px 0 7px}.trend{font-size:11px;color:var(--green)}.layout{display:grid;grid-template-columns:1.5fr 1fr;gap:15px;margin-top:15px}.panel{padding:20px}.panel-head{display:flex;align-items:start;justify-content:space-between;margin-bottom:19px}.panel h2{font-family:'Space Grotesk';font-size:16px;margin:0 0 5px}.panel-head p{font-size:11px;color:var(--muted);margin:0}.link{color:var(--accent);font-size:11px;background:none}.chart{height:205px;display:flex;align-items:flex-end;gap:13px;border-bottom:1px solid var(--line);padding:10px 8px 0;background:repeating-linear-gradient(to bottom,transparent 0,transparent 48px,#253437 49px)}.bar{flex:1;max-width:42px;background:linear-gradient(var(--accent),#b3572c);border-radius:4px 4px 0 0;position:relative;min-height:26px}.bar span{position:absolute;top:calc(100% + 9px);left:50%;transform:translateX(-50%);font-size:10px;color:var(--muted)}.bar em{position:absolute;top:-19px;left:50%;transform:translateX(-50%);font-style:normal;font-size:9px;color:var(--ink);opacity:0}.bar:hover em{opacity:1}.agenda-row,.alert-row{display:flex;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid #253235;font-size:12px}.agenda-row:last-child,.alert-row:last-child{border:0}.time{font-family:'Space Grotesk';color:var(--cyan);width:38px}.event{flex:1}.event b{display:block;font-weight:600;margin-bottom:3px}.event small{color:var(--muted)}.tag,.status{display:inline-block;padding:4px 7px;border-radius:4px;font-size:10px}.tag{color:var(--cyan);background:#1d3a3a}.status{font-weight:600}.status.orange{background:#493423;color:var(--yellow)}.status.blue{background:#203d49;color:#80d4e8}.status.purple{background:#3d2e4c;color:#d0a8ee}.status.green{background:#1d4034;color:var(--green)}.status.red{background:#492c2a;color:var(--red)}.alerts{margin-top:15px}.alert-row{gap:10px}.alert-dot{width:7px;height:7px;border-radius:50%;background:var(--yellow)}.alert-dot.red{background:var(--red)}.alert-row span:nth-child(2){flex:1}.alert-row small{color:var(--muted)}.view{display:none}.view.active{display:block}.module-table{width:100%;border-collapse:collapse;font-size:12px}.module-table th{text-align:left;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:1px;padding:12px 10px;border-bottom:1px solid var(--line)}.module-table td{padding:15px 10px;border-bottom:1px solid #253235}.module-table tr:hover td{background:#1b292c}.person{display:flex;align-items:center;gap:9px}.person b{display:block}.person small{color:var(--muted)}.low{color:var(--red);font-weight:700}.module-toolbar{display:flex;gap:10px;margin-bottom:15px}.filter{background:var(--panel);border:1px solid var(--line);color:var(--muted);border-radius:6px;padding:10px;outline:0}.filter:focus{border-color:var(--accent)}.kanban{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.lane{background:#111b1d;border:1px solid var(--line);border-radius:8px;padding:12px;min-height:350px}.lane-head{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;padding-bottom:10px;border-bottom:2px solid var(--line)}.lane:nth-child(1) .lane-head{border-color:var(--yellow)}.lane:nth-child(2) .lane-head{border-color:#8f72d1}.lane:nth-child(3) .lane-head{border-color:var(--cyan)}.lane:nth-child(4) .lane-head{border-color:var(--green)}.os-card{background:var(--panel);border:1px solid var(--line);padding:13px;border-radius:7px;margin-top:10px;box-shadow:var(--shadow)}.os-card b{font-size:12px}.os-card p{color:var(--muted);font-size:11px;margin:7px 0 12px}.os-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:10px}.empty{padding:70px;text-align:center;color:var(--muted)}.modal-bg{display:none;position:fixed;inset:0;background:#0009;z-index:5;place-items:center;padding:20px}.modal-bg.show{display:grid}.modal{width:min(560px,100%);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:24px;box-shadow:0 20px 80px #000b}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.modal h2{font-family:'Space Grotesk';font-size:20px;margin:0}.close{background:none;color:var(--muted);font-size:21px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.form-grid .wide{grid-column:1/-1}label{display:block;color:var(--muted);font-size:11px}label input,label select{width:100%;margin-top:6px;background:#111a1c;border:1px solid var(--line);border-radius:5px;color:var(--ink);padding:10px;outline:0}label input:focus,label select:focus{border-color:var(--accent)}.modal-foot{display:flex;justify-content:flex-end;gap:9px;margin-top:22px}.toast{position:fixed;bottom:22px;right:25px;background:var(--green);color:#10231c;padding:12px 16px;border-radius:6px;font-size:12px;font-weight:700;transform:translateY(90px);transition:.25s;z-index:8}.toast.show{transform:translateY(0)}
+        @media(max-width:1100px){.kpis{grid-template-columns:repeat(3,1fr)}.layout{grid-template-columns:1fr}.kanban{grid-template-columns:repeat(2,1fr)}}@media(max-width:720px){.sidebar{width:61px;padding:20px 8px}.brand{padding:0 7px 28px}.brand span:not(.brand-mark),.nav-label,.nav-item span:not(.nav-icon),.side-foot{display:none}.nav-item{justify-content:center;padding:12px 0}.topbar{padding:0 16px;height:65px}.crumb{display:none}.search{width:180px}main{padding:24px 16px}.page-head{display:block}.page-head .primary{margin-top:18px}.kpis{grid-template-columns:1fr 1fr}.kpi{padding:14px}.kpi strong{font-size:20px}.layout{margin-top:13px}.panel{padding:15px}.module-toolbar{flex-wrap:wrap}.module-toolbar .search{width:100%}.module-table{min-width:620px}.panel:has(.module-table){overflow:auto}.kanban{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.form-grid .wide{grid-column:auto}}
+    </style>
+</head>
+<body>
+<div class="shell" id="appShell">
+    <aside class="sidebar"><div class="brand"><img class="brand-logo" src="Mekanik-engrenagens.png" alt="Engrenagens Mekanik"><span>Mekanik<small>GESTÃO AUTOMOTIVA</small></span></div><div class="nav-label">Operação</div><button class="nav-item active" data-view="dashboard"><span class="nav-icon">⌂</span><span>Dashboard</span></button><button class="nav-item" data-view="clients"><span class="nav-icon">◉</span><span>Clientes</span></button><button class="nav-item" data-view="vehicles"><span class="nav-icon">▣</span><span>Veículos</span></button><button class="nav-item" data-view="agenda"><span class="nav-icon">□</span><span>Agenda</span></button><button class="nav-item" data-view="os"><span class="nav-icon">✣</span><span>Ordens de serviço</span></button><button class="nav-item" data-view="budgets"><span class="nav-icon">▤</span><span>Orçamentos</span></button><button class="nav-item" data-view="customerRequests"><span class="nav-icon">▣</span><span>Pedidos de clientes</span></button><div class="nav-label">Gestão</div><button class="nav-item" data-view="stock"><span class="nav-icon">▥</span><span>Estoque</span></button><button class="nav-item" data-view="finance"><span class="nav-icon">$</span><span>Financeiro</span></button><button class="nav-item" data-view="reports"><span class="nav-icon">◒</span><span>Relatórios</span></button><div class="side-foot">Unidade principal<div class="user"><span class="avatar" id="adminAvatar">MA</span><span id="adminIdentity">Marina Alves<br><small>Administradora</small></span></div><button class="ghost logout-button" type="button">Sair da conta</button></div></aside>
+    <div class="content"><header class="topbar"><div class="crumb">Mekanik / <b id="crumb">Dashboard</b></div><div class="top-actions"><div class="search-wrap"><span>⌕</span><input class="search" id="globalSearch" placeholder="Buscar cliente, veículo, peça ou função..." aria-label="Busca global"></div><button class="circle-btn" title="Notificações">♧</button><span class="avatar">MA</span></div></header>
+    <main>
+        <section class="view active" id="dashboard"><div class="page-head"><div><p class="eyebrow">QUINTA-FEIRA, 03 SET 2026</p><h1>Bom dia, Marina.</h1><p class="sub">Aqui está o pulso da sua oficina hoje.</p></div><button class="primary" data-new="os">+ Nova ordem de serviço</button></div><div class="kpis"><div class="kpi"><div class="kpi-top">Faturamento do mês <span class="kpi-icon">↗</span></div><strong>R$ 48.290</strong><span class="trend">↑ 12,8% vs. mês anterior</span></div><div class="kpi"><div class="kpi-top">OS em andamento <span class="kpi-icon">✣</span></div><strong>18</strong><span class="trend">6 aguardando aprovação</span></div><div class="kpi"><div class="kpi-top">Carros na oficina <span class="kpi-icon">▣</span></div><strong>12</strong><span class="trend">4 entregas previstas hoje</span></div><div class="kpi"><div class="kpi-top">A receber <span class="kpi-icon">$</span></div><strong>R$ 12.840</strong><span class="trend">8 títulos em aberto</span></div><div class="kpi"><div class="kpi-top">Estoque crítico <span class="kpi-icon">!</span></div><strong>05 itens</strong><span class="trend" style="color:var(--red)">Requer atenção</span></div></div><div class="layout"><div class="panel"><div class="panel-head"><div><h2>Faturamento</h2><p>Receita bruta nos últimos 6 meses</p></div><button class="link">Ver relatório →</button></div><div class="chart"><div class="bar" style="height:48%"><em>R$ 31k</em><span>abr</span></div><div class="bar" style="height:62%"><em>R$ 36k</em><span>mai</span></div><div class="bar" style="height:54%"><em>R$ 34k</em><span>jun</span></div><div class="bar" style="height:74%"><em>R$ 42k</em><span>jul</span></div><div class="bar" style="height:68%"><em>R$ 39k</em><span>ago</span></div><div class="bar" style="height:91%;background:linear-gradient(var(--cyan),#278d82)"><em>R$ 48k</em><span>set</span></div></div></div><div class="panel"><div class="panel-head"><div><h2>Agenda de hoje</h2><p>Próximos atendimentos</p></div><button class="link" data-view="agenda">Ver agenda →</button></div><div class="agenda-row"><span class="time">08:30</span><div class="event"><b>Revisão de 60.000 km</b><small>João Santos · Toyota Corolla</small></div><span class="tag">Confirmado</span></div><div class="agenda-row"><span class="time">10:00</span><div class="event"><b>Troca de pastilhas</b><small>Mariana Oliveira · Honda Civic</small></div><span class="tag">Chegou</span></div><div class="agenda-row"><span class="time">14:30</span><div class="event"><b>Diagnóstico eletrônico</b><small>Carlos Almeida · VW T-Cross</small></div><span class="tag">Agendado</span></div><div class="agenda-row"><span class="time">16:00</span><div class="event"><b>Alinhamento e balanceamento</b><small>Paulo Mendes · Chevrolet Onix</small></div><span class="tag">Agendado</span></div></div></div><div class="panel alerts"><div class="panel-head"><div><h2>Central de atenção</h2><p>Itens que pedem uma decisão</p></div><span class="status orange">5 alertas</span></div><div class="alert-row"><i class="alert-dot red"></i><span><b>Estoque baixo:</b> Pastilha de freio dianteira</span><small>2 un.</small></div><div class="alert-row"><i class="alert-dot"></i><span><b>Aprovação pendente:</b> Orçamento #1048</span><small>há 2h</small></div><div class="alert-row"><i class="alert-dot red"></i><span><b>Conta vence hoje:</b> Auto Peças Brasil</span><small>R$ 2.480</small></div></div></section>
+        <section class="view" id="clients"><div class="page-head"><div><p class="eyebrow">RELACIONAMENTO</p><h1>Clientes</h1><p class="sub">Pessoas, veículos e histórico em um só lugar.</p></div><button class="primary" data-new="client">+ Novo cliente</button></div><div class="panel"><div class="module-toolbar"><input class="filter" data-filter="clients" placeholder="Buscar por nome, telefone ou CPF..." style="flex:1"><select class="filter"><option>Todos os clientes</option><option>Ativos</option></select></div><table class="module-table"><thead><tr><th>Cliente</th><th>Contato</th><th>Veículos</th><th>Último atendimento</th><th>Total gasto</th><th>Status</th></tr></thead><tbody id="clientRows"></tbody></table></div></section>
+        <section class="view" id="vehicles"><div class="page-head"><div><p class="eyebrow">FROTA DE CLIENTES</p><h1>Veículos</h1><p class="sub">Encontre qualquer histórico pela placa.</p></div><button class="primary" data-new="vehicle">+ Novo veículo</button></div><div class="panel"><div class="module-toolbar"><input class="filter" data-filter="vehicles" placeholder="Buscar placa, modelo ou cliente..." style="flex:1"></div><table class="module-table"><thead><tr><th>Veículo</th><th>Placa</th><th>Proprietário</th><th>Quilometragem</th><th>Último serviço</th><th>Status</th></tr></thead><tbody id="vehicleRows"></tbody></table></div></section>
+        <section class="view" id="os"><div class="page-head"><div><p class="eyebrow">PRODUÇÃO</p><h1>Ordens de serviço</h1><p class="sub">Acompanhe o veículo do check-in à entrega.</p></div><button class="primary" data-new="os">+ Nova OS</button></div><div class="kanban" id="kanban"></div></section>
+        <section class="view" id="stock"><div class="page-head"><div><p class="eyebrow">SUPRIMENTOS</p><h1>Estoque</h1><p class="sub">Movimentações e pontos de reposição.</p></div><button class="primary" data-new="part">+ Nova peça</button></div><div class="panel"><div class="module-toolbar"><input class="filter" data-filter="parts" placeholder="Buscar peça, SKU ou categoria..." style="flex:1"><button class="ghost" id="stockIn">Registrar entrada</button></div><table class="module-table"><thead><tr><th>Peça</th><th>SKU</th><th>Categoria</th><th>Atual</th><th>Mínimo</th><th>Preço venda</th><th>Situação</th></tr></thead><tbody id="stockRows"></tbody></table></div></section>
+        <section class="view" id="agenda"><div class="page-head"><div><p class="eyebrow">PLANEJAMENTO</p><h1>Agenda</h1><p class="sub">Quinta-feira, 03 de setembro · 4 atendimentos.</p></div><button class="primary" data-new="appointment">+ Novo agendamento</button></div><div class="panel"><div class="module-toolbar"><button class="ghost">‹</button><button class="ghost">Hoje</button><button class="ghost">›</button><select class="filter" style="margin-left:auto"><option>Todos os mecânicos</option><option>João Ferreira</option></select></div><div class="agenda-row"><span class="time">08:30</span><div class="event"><b>Revisão de 60.000 km · João Santos</b><small>Toyota Corolla · Box 02 · João Ferreira</small></div><span class="status blue">Confirmado</span></div><div class="agenda-row"><span class="time">10:00</span><div class="event"><b>Troca de pastilhas · Mariana Oliveira</b><small>Honda Civic · Box 01 · Lucas Rocha</small></div><span class="status green">Cliente chegou</span></div><div class="agenda-row"><span class="time">14:30</span><div class="event"><b>Diagnóstico eletrônico · Carlos Almeida</b><small>VW T-Cross · Box 03 · João Ferreira</small></div><span class="status orange">Agendado</span></div><div class="agenda-row"><span class="time">16:00</span><div class="event"><b>Alinhamento · Paulo Mendes</b><small>Chevrolet Onix · Box 02 · Lucas Rocha</small></div><span class="status orange">Agendado</span></div></div></section>
+        <section class="view" id="budgets"><div class="page-head"><div><p class="eyebrow">COMERCIAL</p><h1>Orçamentos</h1><p class="sub">Acompanhe aprovações e converta propostas em OS.</p></div><button class="primary" data-new="budget">+ Novo orçamento</button></div><div class="panel"><table class="module-table"><thead><tr><th>Orçamento</th><th>Cliente / veículo</th><th>Validade</th><th>Total</th><th>Status</th><th></th></tr></thead><tbody><tr><td><b>#1048</b></td><td>Mariana Oliveira · Honda Civic</td><td>05 set 2026</td><td>R$ 1.860,00</td><td><span class="status orange">Aguardando aprovação</span></td><td><button class="link">Converter em OS</button></td></tr><tr><td><b>#1047</b></td><td>João Santos · Toyota Corolla</td><td>03 set 2026</td><td>R$ 3.240,00</td><td><span class="status green">Aprovado</span></td><td><button class="link">Abrir</button></td></tr></tbody></table></div></section>
+        <section class="view" id="finance"><div class="page-head"><div><p class="eyebrow">CONTROLE FINANCEIRO</p><h1>Financeiro</h1><p class="sub">Fluxo de caixa, contas e recebimentos.</p></div><button class="primary" data-new="expense">+ Lançar despesa</button></div><div class="kpis"><div class="kpi"><div class="kpi-top">Saldo em caixa</div><strong>R$ 31.450</strong><span class="trend">↑ 8,4% este mês</span></div><div class="kpi"><div class="kpi-top">A receber</div><strong>R$ 12.840</strong><span class="trend">8 títulos</span></div><div class="kpi"><div class="kpi-top">A pagar</div><strong>R$ 8.690</strong><span class="trend" style="color:var(--yellow)">5 títulos</span></div></div><div class="panel" style="margin-top:15px"><div class="panel-head"><div><h2>Contas recentes</h2><p>Entradas e saídas da operação</p></div></div><table class="module-table"><thead><tr><th>Descrição</th><th>Categoria</th><th>Vencimento</th><th>Valor</th><th>Status</th></tr></thead><tbody><tr><td>Recebimento OS #1042</td><td>Serviço</td><td>Hoje</td><td class="trend">+ R$ 890,00</td><td><span class="status green">Recebido</span></td></tr><tr><td>Auto Peças Brasil</td><td>Fornecedor</td><td>Hoje</td><td class="low">- R$ 2.480,00</td><td><span class="status red">Vence hoje</span></td></tr></tbody></table></div></section>
+        <section class="view" id="reports"><div class="page-head"><div><p class="eyebrow">INTELIGÊNCIA OPERACIONAL</p><h1>Relatórios</h1><p class="sub">Indicadores para decisões mais rápidas.</p></div><button class="ghost">Exportar PDF ↓</button></div><div class="layout"><div class="panel"><div class="panel-head"><div><h2>Serviços mais realizados</h2><p>Acumulado no período selecionado</p></div></div><div class="agenda-row"><span style="width:150px">Troca de óleo</span><span style="height:8px;background:var(--accent);width:63%;border-radius:3px"></span><b>68</b></div><div class="agenda-row"><span style="width:150px">Freios</span><span style="height:8px;background:var(--cyan);width:48%;border-radius:3px"></span><b>51</b></div><div class="agenda-row"><span style="width:150px">Revisão</span><span style="height:8px;background:var(--yellow);width:39%;border-radius:3px"></span><b>42</b></div><div class="agenda-row"><span style="width:150px">Suspensão</span><span style="height:8px;background:#9b7bd1;width:28%;border-radius:3px"></span><b>30</b></div></div><div class="panel"><div class="panel-head"><div><h2>Saúde da operação</h2><p>Metas de setembro</p></div></div><div class="alert-row"><span>Margem média</span><b class="trend">34,8%</b></div><div class="alert-row"><span>Ticket médio</span><b>R$ 684</b></div><div class="alert-row"><span>Retorno de clientes</span><b class="trend">72%</b></div></div></div></section>
+        <section class="view" id="customerRequests"><div class="page-head"><div><p class="eyebrow">ATENDIMENTO</p><h1>Pedidos de clientes</h1><p class="sub">Solicitações de agendamento enviadas pelo portal.</p></div></div><div class="panel"><div class="module-toolbar"><input class="filter" id="customerRequestSearch" placeholder="Buscar cliente, serviço ou veículo..." style="flex:1"></div><table class="module-table"><thead><tr><th>Cliente</th><th>Serviço</th><th>Veículo</th><th>Data</th><th>Horário</th><th>Status</th><th></th></tr></thead><tbody id="customerRequestRows"></tbody></table></div></section>
+    </main></div>
+</div>
+<div class="modal-bg" id="modalBg"><div class="modal"><div class="modal-head"><h2 id="modalTitle">Novo cadastro</h2><button class="close" id="closeModal">×</button></div><form id="modalForm"><div class="form-grid" id="formFields"></div><div class="modal-foot"><button type="button" class="ghost" id="cancelModal">Cancelar</button><button class="primary" type="submit">Salvar cadastro</button></div></form></div></div><div class="modal-bg" id="profileModal" aria-hidden="true">
+    <section class="modal profile-modal" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+        <div class="modal-head"><h2 id="profileTitle">Meu perfil</h2><button class="close" id="closeProfile" type="button" aria-label="Fechar">×</button></div>
+        <form id="profileForm">
+            <div class="profile-photo-row">
+                <span class="avatar" id="profilePreview"></span>
+                <div class="profile-photo-actions"><label>Foto do perfil<input id="profilePhoto" type="file" accept="image/*"></label><button class="ghost" id="removeProfilePhoto" type="button">Remover foto</button></div>
+            </div>
+            <div class="profile-grid">
+                <label class="wide">Nome completo<input name="name" autocomplete="name" required maxlength="100"></label>
+                <label class="wide">E-mail<input name="email" type="email" autocomplete="email" required maxlength="160"></label>
+                <label class="wide">Senha atual<input name="currentPassword" type="password" autocomplete="current-password"></label>
+                <label>Nova senha<input name="newPassword" type="password" autocomplete="new-password" minlength="6"></label>
+                <label>Confirmar nova senha<input name="confirmPassword" type="password" autocomplete="new-password" minlength="6"></label>
+            </div>
+            <p class="auth-note">Deixe os campos de senha vazios para manter sua senha atual. Esta demonstração guarda os dados somente neste navegador.</p>
+            <p class="profile-error" id="profileError" role="alert"></p>
+            <div class="modal-foot"><button class="ghost" id="cancelProfile" type="button">Cancelar</button><button class="primary" type="submit">Salvar alterações</button></div>
+        </form>
+    </section>
+</div>
+<div class="toast" id="toast"></div>
+<section class="auth-screen" id="authScreen" aria-label="Entrar no Mekanik">
+    <div class="auth-card">
+        <div class="auth-brand"><img class="brand-logo" src="Mekanik-engrenagens.png" alt="Engrenagens Mekanik"><strong>Mekanik</strong></div>
+        <p class="eyebrow">GESTÃO AUTOMOTIVA</p>
+        <h1 id="authTitle">Entre na sua conta</h1>
+        <p class="sub" id="authDescription">Acesse sua área de cliente.</p>
+        <form id="authForm">
+            <label class="auth-field register-field">Nome completo<input name="name" autocomplete="name"></label>
+            <label class="auth-field">E-mail<input name="email" type="email" autocomplete="email" required></label>
+            <label class="auth-field">Senha<input name="password" type="password" autocomplete="current-password" minlength="6" required></label>
+            <label class="auth-field remember-field"><span><input type="checkbox" id="rememberAccount" checked> Manter minha conta conectada neste navegador</span></label>
+            <button class="primary auth-submit" id="authSubmit" type="submit">Entrar</button>
+        </form>
+        <button class="auth-switch" id="authSwitch" type="button">Ainda não tem conta? Cadastre-se</button>
+        <button class="auth-google" id="googleLogin" type="button">G  Continuar com Google</button>
+        <button class="ghost auth-guest" id="guestContinue" type="button">Continuar como visitante</button>
+        <p class="auth-note" id="authNote">Protótipo local. Contas e pedidos ficam salvos somente neste navegador. O login Google exige configuração de serviço.</p>
+        <p class="auth-error" id="authError" role="alert"></p>
+    </div>
+</section>
+<main class="client-portal" id="clientPortal">
+    <header class="client-topbar"><div class="auth-brand"><img class="brand-logo" src="Mekanik-engrenagens.png" alt="Engrenagens Mekanik"><strong>Mekanik</strong></div><div class="client-header-controls"><button class="ghost guest-entry" id="guestLogin" type="button">Entrar / criar conta</button><span>Olá, <b id="clientName"></b> <button class="ghost logout-button" type="button">Sair</button></span></div></header>
+    <div class="client-content">
+        <section class="client-hero">
+            <p class="eyebrow">PEÇAS E SERVIÇOS, SEM COMPLICAÇÃO</p>
+            <h1>Encontre a peça certa. Compare com calma.</h1>
+            <p class="sub">Pesquise como visitante, informe o nome ou modelo da peça e peça cotações. Você só precisa entrar para enviar o pedido.</p>
+            <div class="client-hero-actions"><button class="primary" type="button" onclick="document.getElementById('marketplace').scrollIntoView({behavior:'smooth'})">Procurar uma peça <span aria-hidden="true">→</span></button><span class="local-demo-note">Você pode começar sem conta</span></div>
+        </section>
+        <section class="panel marketplace-panel" id="marketplace">
+            <div class="marketplace-heading"><div><h2>Buscar em empresas cadastradas</h2><p>Descreva a peça e, se quiser, envie uma foto. No protótipo, seu pedido fica salvo neste navegador; as respostas de várias empresas dependem de um banco compartilhado.</p></div><span class="demo-pill">Demonstração local</span></div>
+            <form class="marketplace-form" id="partSearchForm">
+                <label>Nome da peça<input name="partName" placeholder="Ex.: pastilha de freio" required></label>
+                <label>Marca e modelo do veículo<input name="vehicleModel" placeholder="Ex.: Honda Civic 2018" required></label>
+                <label class="wide">Foto da peça (opcional)<input name="photo" id="partPhoto" type="file" accept="image/*"><img class="part-photo-preview" id="partPhotoPreview" alt="Prévia da peça escolhida"></label>
+                <p class="marketplace-help wide">Para proteger seu espaço, a imagem é reduzida antes de ser guardada neste navegador. Não envie documentos ou dados pessoais na foto.</p>
+                <button class="primary wide" type="submit">Pedir cotações</button>
+            </form>
+            <div id="partRequestFeedback" class="local-db-notice" role="status">Sem login: você pode pesquisar e preencher o pedido. O login será solicitado somente ao enviar.</div>
+            <div class="part-requests" id="partRequests" aria-live="polite"></div>
+        </section>
+        <p class="eyebrow" style="margin-top:38px">ÁREA DO CLIENTE</p><h1>Seus serviços e agendamentos</h1><p class="sub">Escolha o serviço e peça um horário. A oficina confirmará seu pedido.</p>
+        <h2 class="client-section-title">Serviços disponíveis</h2><div class="service-cards" id="serviceCards"></div>
+        <section class="panel booking-panel"><h2>Agendar um serviço</h2><form id="bookingForm" class="booking-form">
+            <label>Serviço<select name="service" id="clientService" required></select></label>
+            <label>Veículo<input name="vehicle" placeholder="Ex.: Honda Civic, placa ABC1D23" required></label>
+            <label>Data desejada<input name="date" type="date" id="bookingDate" required></label>
+            <label>Horário desejado<input name="time" type="time" required></label>
+            <button class="primary" type="submit">Solicitar agendamento</button>
+        </form></section>
+        <section class="panel my-bookings"><h2>Meus pedidos</h2><div id="myBookings"></div></section>
+    </div>
+</main>
+<style>.row-actions{display:flex;gap:6px;justify-content:flex-end}.row-actions button{background:none;color:var(--accent);font-size:11px;padding:4px}.row-actions button.delete{color:var(--red)}</style>
+<style>
+    .search-wrap{z-index:12}
+    .search-results,.account-menu,.notification-menu{display:none;position:absolute;top:calc(100% + 10px);right:0;z-index:15;width:min(360px,calc(100vw - 28px));padding:8px;background:var(--panel);border:1px solid var(--line);border-radius:9px;box-shadow:var(--shadow)}
+    .search-results{left:0;right:auto;max-height:min(65vh,440px);overflow:auto}
+    .search-results.open,.account-menu.open,.notification-menu.open{display:block}
+    .search-result,.menu-action,.notification-item{display:flex;width:100%;align-items:center;gap:10px;padding:10px;text-align:left;background:transparent;color:var(--ink);border-radius:6px}
+    .search-result:hover,.menu-action:hover,.notification-item:hover{background:var(--panel2)}
+    .search-result-copy,.notification-copy{min-width:0;flex:1}
+    .search-result-copy b,.notification-copy b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px}
+    .search-result-copy small,.notification-copy small{display:block;margin-top:3px;color:var(--muted);font-size:10px}
+    .search-result-type{flex:none;color:var(--accent);font-size:10px}
+    .search-empty,.notification-empty{padding:16px 10px;color:var(--muted);font-size:12px}
+    .top-actions .theme-toggle,.account-actions .theme-toggle{display:grid;width:38px;height:38px;min-width:38px;place-items:center;padding:0;font-size:18px}
+    .notification-wrap,.account-menu-wrap{position:relative;flex:none}
+    .notification-badge{position:absolute;top:-5px;right:-5px;min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:var(--red);color:white;font-size:10px;line-height:17px;text-align:center}
+    .notification-badge[hidden]{display:none}
+    .notification-menu{width:min(350px,calc(100vw - 28px))}
+    .notification-menu h3,.account-menu-heading{margin:4px 8px 8px;font-size:13px}
+    .notification-item{align-items:flex-start}
+    .notification-icon{flex:none;color:var(--accent);font-size:15px}
+    .account-trigger{width:38px;height:38px;padding:0;border:2px solid transparent;background:#31504f}
+    .account-trigger:hover,.account-trigger[aria-expanded="true"]{border-color:var(--accent)}
+    .account-menu-heading{padding:9px 8px 11px;border-bottom:1px solid var(--line)}
+    .account-menu-heading small{display:block;margin-top:4px;color:var(--muted);font-size:11px;font-weight:400}
+    .menu-divider{height:1px;margin:6px 4px;background:var(--line)}
+    .account-menu .menu-action{font-size:12px}
+    .top-actions .circle-btn{position:relative}
+    @media(max-width:720px){.topbar{padding:0 14px;gap:10px}.search{width:min(220px,34vw)}main{padding:24px 16px}.account-menu,.notification-menu{right:0}.search-results{left:auto;right:0;width:min(360px,calc(100vw - 28px))}}
+    @media(max-width:520px){.topbar{height:auto;min-height:76px;flex-wrap:wrap;padding:10px 14px}.top-actions{gap:8px;margin-left:auto}.search-wrap{order:2;width:100%}.search{width:100%}.topbar>.crumb{display:none}.top-actions .theme-toggle,.account-actions .theme-toggle{width:36px;height:36px;min-width:36px;padding:0;font-size:18px}}
+</style>
+<style>
+    .brand{padding-left:4px;gap:12px}
+    .brand-logo{width:44px;height:44px;border-radius:50%;padding:4px}
+    .brand-logo{object-fit:contain;background:transparent;border-radius:0;padding:0;box-shadow:none}
+    .nav-item{padding:14px 12px;font-size:14px}
+    .primary,.ghost{padding:13px 18px;font-size:14px}
+    .auth-screen{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:20px;background:linear-gradient(135deg,#101719,#152326)}
+    .auth-screen.hidden{display:none}
+    .auth-card{width:min(440px,100%);padding:32px;background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+    .auth-brand{display:flex;align-items:center;gap:12px;margin-bottom:22px;font-size:22px}
+    .auth-brand .brand-logo{flex:none}
+    .auth-card h1,.client-content h1{font-family:'Space Grotesk';font-size:28px;margin:0 0 8px}
+    .auth-card>.sub{margin-bottom:22px}
+    .auth-field{display:flex;flex-direction:column;gap:7px;margin:14px 0;color:var(--muted);font-size:13px}
+    .auth-field input,.auth-field select,.booking-form input,.booking-form select{width:100%;padding:13px;border:1px solid var(--line);border-radius:7px;background:#0f1719;color:var(--ink);outline:0}
+    .auth-field input:focus,.auth-field select:focus,.booking-form input:focus,.booking-form select:focus{border-color:var(--accent)}
+    .register-field{display:none}
+    .auth-screen.registering .register-field{display:flex}
+    .auth-submit{width:100%;margin-top:8px}
+    .auth-switch{display:block;margin:16px auto 0;background:none;color:var(--cyan);border:0;font-size:13px}
+    .auth-note{margin:18px 0 0;color:var(--muted);font-size:11px;line-height:1.5}
+    .auth-error{min-height:18px;margin:8px 0 0;color:var(--red);font-size:12px}
+    .client-portal{display:none;min-height:100vh;flex-direction:column}
+    body.client-mode #appShell{display:none}
+    body.client-mode .client-portal{display:flex}
+    .client-topbar{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;border-bottom:1px solid var(--line)}
+    .client-content{width:min(1080px,92%);margin:36px auto}
+    .client-section-title{margin:30px 0 14px;font-family:'Space Grotesk'}
+    .service-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-bottom:20px}
+    .service-card{padding:18px;background:var(--panel);border:1px solid var(--line);border-radius:9px}
+    .service-card h3{margin:0 0 8px;font-size:15px}
+    .service-card p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}
+    .booking-panel,.my-bookings{margin-top:16px}
+    .booking-panel h2,.my-bookings h2{margin:0 0 16px;font-family:'Space Grotesk';font-size:18px}
+    .booking-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .booking-form label{display:flex;flex-direction:column;gap:7px;color:var(--muted);font-size:13px}
+    .booking-form button{grid-column:1/-1;justify-self:start}
+    .booking-item{padding:14px 0;border-top:1px solid var(--line);font-size:13px}
+    .booking-item small{display:block;margin-top:5px;color:var(--muted)}
+    .customer-request-action{padding:7px 10px;font-size:12px}
+    .status.pending{background:#493423;color:var(--yellow)}
+    .logout-button{margin-top:10px;padding:8px 12px}
+    .profile-modal{width:min(620px,100%);max-height:90vh;overflow:auto}
+    .profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .profile-grid label{display:flex;flex-direction:column;gap:7px;color:var(--muted);font-size:13px}
+    .profile-grid input{width:100%;padding:12px;border:1px solid var(--line);border-radius:7px;background:var(--panel2);color:var(--ink)}
+    .profile-grid .wide{grid-column:1/-1}
+    .profile-photo-row{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+    .profile-photo-row .avatar{width:68px;height:68px;font-size:20px;overflow:hidden}
+    .profile-photo-row .avatar img{width:100%;height:100%;object-fit:cover}
+    .avatar{overflow:hidden;flex:0 0 auto}
+    .avatar img{display:block;width:100%;height:100%;object-fit:cover;border-radius:inherit}
+    .profile-photo-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    .profile-photo-actions input{max-width:230px;color:var(--muted);font-size:12px}
+    .profile-error{min-height:18px;color:var(--red);font-size:12px}
+    .account-actions{display:flex;align-items:center;gap:9px;white-space:nowrap}
+    .account-actions .avatar{flex:none}
+    .theme-toggle,.profile-open{padding:9px 12px;font-size:12px}
+    .client-overview{display:flex;justify-content:space-between;align-items:center;gap:18px;margin:24px 0}
+    .client-overview h2{font-family:'Space Grotesk';margin:0 0 6px;font-size:18px}
+    .client-overview p{margin:0;color:var(--muted);font-size:13px}
+    .client-quick-actions{display:flex;gap:8px;flex-wrap:wrap}
+    .booking-item{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .booking-item-copy{min-width:0}
+    .booking-item .booking-item-actions{display:flex;align-items:center;gap:8px}
+    .booking-item-actions button{padding:7px 10px;font-size:11px}
+    body[data-theme="light"]{--ink:#1d292b;--muted:#607174;--panel:#fff;--panel2:#f1f5f4;--line:#d7e1df;--bg:#f3f7f6;--accent:#c76a20;--cyan:#158d82;--green:#27824d;--red:#c5483d;--yellow:#9a7514;--shadow:0 18px 50px #344b481c}
+    body[data-theme="light"] .sidebar{background:#e8efed}
+    body[data-theme="light"] .nav-item:hover,body[data-theme="light"] .nav-item.active{background:#dce8e5;color:var(--ink)}
+    body[data-theme="light"] .nav-item.active{color:var(--ink)}
+    body[data-theme="light"] .chart{background:repeating-linear-gradient(to bottom,transparent 0,transparent 48px,#e1e9e7 49px)}
+    body[data-theme="light"] .agenda-row,body[data-theme="light"] .alert-row,body[data-theme="light"] .module-table td{border-color:#e1e9e7}
+    body[data-theme="light"] .module-table tr:hover td{background:#f1f6f4}
+    body[data-theme="light"] .lane{background:#edf3f1}
+    body[data-theme="light"] .auth-screen{background:linear-gradient(135deg,#edf4f2,#f8faf9)}
+    body[data-theme="light"] .auth-field input,body[data-theme="light"] .auth-field select,body[data-theme="light"] .booking-form input,body[data-theme="light"] .booking-form select{background:#fff}
+    body[data-theme="light"] .tag{background:#e3f2ef}
+    body[data-theme="light"] .status.orange{background:#fff2dc}
+    body[data-theme="light"] .status.blue{background:#e3f3f7;color:#27748a}
+    body[data-theme="light"] .status.purple{background:#f0eafa;color:#76549b}
+    body[data-theme="light"] .status.green{background:#e3f3e9}
+    body[data-theme="light"] .status.red{background:#fae9e7}
+    body[data-theme="light"] .status.pending{background:#fff2dc}
+    @media(max-width:800px){.auth-card{padding:24px}.client-topbar{padding:0 4%;gap:10px}.client-content{margin:24px auto}.booking-form{grid-template-columns:1fr}.booking-form button{grid-column:auto}.client-overview{align-items:flex-start;flex-direction:column}.account-actions{gap:5px}.account-actions .profile-avatar{display:none}.profile-grid{grid-template-columns:1fr}.profile-grid .wide{grid-column:auto}}
+    @media(max-width:520px){.client-topbar{height:auto;min-height:76px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}.account-actions{flex-wrap:wrap;justify-content:flex-end;white-space:normal}.account-actions .ghost{padding:8px 9px;font-size:11px}}
+    :root{--accent:#ff9850;--cyan:#62dec7;--green:#73e0a0;--panel:#172326;--panel2:#203033;--line:#304346;--bg:#0c1416;--shadow:0 24px 70px #050b0dcc}
+    body{background:radial-gradient(ellipse at 70% 0%,#1d3331 0,transparent 36%),var(--bg)}
+    .client-portal{background:radial-gradient(ellipse at 12% 14%,#173331 0,transparent 34%),radial-gradient(ellipse at 90% 44%,#29251d 0,transparent 30%),var(--bg)}
+    .client-topbar{position:sticky;top:0;z-index:10;background:#0c1416d9;backdrop-filter:blur(16px);border-color:#ffffff12}
+    .client-content{width:min(1120px,92%);margin:42px auto 70px}
+    .client-hero{position:relative;overflow:hidden;padding:clamp(28px,6vw,64px);border:1px solid #ffffff16;border-radius:26px;background:linear-gradient(120deg,#1d3734ed,#162326ed 58%,#342819c9);box-shadow:0 30px 90px #0005;animation:rise-in .65s both}
+    .client-hero:after{content:"";position:absolute;width:280px;height:280px;right:-60px;top:-100px;border-radius:50%;background:radial-gradient(circle,#ff985077,transparent 68%);pointer-events:none}
+    .client-hero .eyebrow{color:var(--cyan)}
+    .client-hero h1{max-width:760px;font-size:clamp(34px,6vw,62px);line-height:1.04;letter-spacing:-2px}
+    .client-hero .sub{max-width:590px;font-size:15px;line-height:1.7}
+    .client-hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:25px}
+    .client-hero .primary,.marketplace-form .primary{border-radius:999px;padding:14px 21px;box-shadow:0 10px 26px #ff985033;transition:transform .2s,box-shadow .2s}
+    .client-hero .primary:hover,.marketplace-form .primary:hover{transform:translateY(-3px);box-shadow:0 15px 32px #ff985044}
+    .local-demo-note{display:inline-flex;align-items:center;gap:8px;color:#c3d2d0;font-size:12px}
+    .local-demo-note:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 15px var(--cyan)}
+    .marketplace-panel{margin-top:20px;padding:clamp(20px,4vw,34px);border-radius:20px;background:linear-gradient(145deg,#172528,#121c1e);animation:rise-in .7s both}
+    .marketplace-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:22px}
+    .marketplace-heading h2{margin:0 0 8px;font:600 clamp(21px,3vw,28px) 'Space Grotesk'}
+    .marketplace-heading p{max-width:570px;margin:0;color:var(--muted);font-size:13px;line-height:1.6}
+    .demo-pill{flex:none;padding:7px 10px;border:1px solid #62dec744;border-radius:999px;color:var(--cyan);font-size:10px;text-transform:uppercase;letter-spacing:1px}
+    .marketplace-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .marketplace-form label{display:flex;flex-direction:column;gap:8px;color:#c3d2d0;font-size:12px}
+    .marketplace-form input{width:100%;padding:14px;border:1px solid var(--line);border-radius:10px;background:#0c1517;color:var(--ink);outline:0;transition:border-color .2s,box-shadow .2s}
+    .marketplace-form input:focus{border-color:var(--cyan);box-shadow:0 0 0 3px #62dec71a}
+    .marketplace-form .wide{grid-column:1/-1}
+    .marketplace-form button{justify-self:start}
+    .part-photo-preview{display:none;max-width:150px;max-height:110px;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
+    .part-photo-preview.visible{display:block}
+    .marketplace-help{margin:0;color:var(--muted);font-size:11px;line-height:1.5}
+    .part-requests{display:grid;gap:12px;margin-top:18px}
+    .part-request-card{display:grid;grid-template-columns:86px 1fr auto;align-items:center;gap:16px;padding:15px;border:1px solid var(--line);border-radius:14px;background:#0f191b}
+    .part-request-card img{width:86px;height:74px;border-radius:9px;object-fit:cover;background:var(--panel2)}
+    .part-request-card h3{margin:0 0 5px;font:600 14px 'Space Grotesk'}
+    .part-request-card p{margin:0;color:var(--muted);font-size:12px}
+    .part-request-status{color:var(--yellow);font-size:11px;text-align:right}
+    .client-section-title{margin:38px 0 14px;font-size:22px}
+    .service-card,.panel,.kpi{border-radius:14px;transition:transform .22s,border-color .22s,box-shadow .22s}
+    .service-card:hover,.kpi:hover{transform:translateY(-4px);border-color:#62dec755;box-shadow:0 18px 38px #0004}
+    .service-card{background:linear-gradient(145deg,#1a292b,#141e20);padding:22px}
+    .service-card h3{font-family:'Space Grotesk'}
+    .panel{box-shadow:0 12px 35px #0002}
+    .primary,.ghost{transition:filter .2s,transform .2s,border-color .2s}
+    .primary:hover,.ghost:hover{transform:translateY(-1px)}
+    .nav-item{transition:background .2s,color .2s,transform .2s}
+    .nav-item:hover{transform:translateX(3px)}
+    .auth-card{border-radius:20px;animation:rise-in .35s both}
+    .auth-google{width:100%;margin-top:10px;padding:12px;border:1px solid var(--line);border-radius:9px;background:var(--panel2);color:var(--ink)}
+    .auth-guest{width:100%;margin-top:8px}
+    .client-header-controls{display:flex;align-items:center;gap:10px}
+    body.guest-mode .client-header-controls>:not(.guest-entry){display:none}
+    body:not(.guest-mode) .guest-entry{display:none}
+    .local-db-notice{margin:16px 0 0;padding:12px 14px;border:1px solid #eac86d35;border-radius:10px;background:#eac86d0d;color:#ddc990;font-size:11px;line-height:1.5}
+    .auth-screen.registering .remember-field{display:none}
+    .remember-field span{display:flex;align-items:center;gap:9px;color:var(--muted);font-size:12px}
+    .remember-field input{width:16px;height:16px;padding:0;border:0;background:transparent;accent-color:var(--accent)}
+    .shell{width:100%;min-height:100vh}
+    .sidebar{position:sticky;top:0;height:100vh;min-height:100vh;background:linear-gradient(180deg,#101a1c,#0b1113);border-color:#ffffff12}
+    .content{width:calc(100% - 256px);min-height:100vh}
+    .content>main{width:100%;max-width:none;min-height:calc(100vh - 76px)}
+    .topbar{background:#101819;border-color:#ffffff12}
+    .page-head h1{font-size:clamp(28px,3vw,38px)}
+    .kpi,.panel{border-radius:14px;box-shadow:0 12px 34px #0002}
+    .kpi{padding:21px}
+    .kpi strong{font-size:clamp(23px,2vw,30px)}
+    #stock .module-table{min-width:760px}
+    #stock .panel{overflow-x:auto}
+    #stockRows .row-actions{white-space:nowrap}
+    #stockRows .row-actions button{padding:7px 9px;border-radius:6px;background:#203033;color:var(--cyan)}
+    #stockRows .row-actions button[data-restock]{background:#ff9850;color:#182124;font-weight:700}
+    #stockRows .row-actions button.delete{background:#492c2a;color:var(--red)}
+    .stock-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:0 0 15px}
+    .stock-summary-card{padding:17px;border:1px solid var(--line);border-radius:13px;background:linear-gradient(145deg,var(--panel),var(--panel2))}
+    .stock-summary-card span{display:block;color:var(--muted);font-size:11px}
+    .stock-summary-card strong{display:block;margin-top:8px;font:600 24px 'Space Grotesk'}
+    .restock-form{display:grid;gap:15px}
+    .restock-form label{display:grid;gap:7px;color:var(--muted);font-size:13px}
+    .restock-form input,.restock-form select{width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--panel2);color:var(--ink)}
+    .restock-current{margin:0;color:var(--muted);font-size:12px}
+    .restock-error{min-height:18px;margin:0;color:var(--red);font-size:12px}
+    .connect-link .nav-icon{display:none}
+    body[data-theme="light"]{--ink:#20302f;--muted:#647572;--panel:#fff;--panel2:#f2f6f4;--line:#dbe5e1;--bg:#edf3f1;--accent:#d8752a;--cyan:#168f80;--green:#25844d;--red:#c3443b;--yellow:#9b7411;--shadow:0 18px 50px #263e3818}
+    body[data-theme="light"]{background:radial-gradient(ellipse at 70% 0%,#dcebe5 0,transparent 38%),var(--bg)}
+    body[data-theme="light"] .sidebar{background:linear-gradient(180deg,#f9fbfa,#e7efec);border-color:#dbe5e1}
+    body[data-theme="light"] .nav-item:hover,body[data-theme="light"] .nav-item.active{background:#dce9e5;color:var(--ink)}
+    body[data-theme="light"] .nav-item.active{box-shadow:inset 3px 0 var(--accent)}
+    body[data-theme="light"] .topbar{background:#f8fbf9;border-color:#dbe5e1}
+    body[data-theme="light"] .client-portal{background:radial-gradient(ellipse at 12% 14%,#dcebe5 0,transparent 38%),var(--bg)}
+    body[data-theme="light"] .client-topbar{background:#f8fbf9e8;border-color:#dbe5e1}
+    body[data-theme="light"] .client-hero{background:linear-gradient(120deg,#e1f0eb,#f8fbfa 62%,#f7e9dc);border-color:#d2e2dc;box-shadow:0 25px 70px #263e3818}
+    body[data-theme="light"] .client-hero:after{background:radial-gradient(circle,#e99a5c55,transparent 68%)}
+    body[data-theme="light"] .local-demo-note{color:#516863}
+    body[data-theme="light"] .marketplace-panel,body[data-theme="light"] .service-card{background:linear-gradient(145deg,#fff,#f3f7f5)}
+    body[data-theme="light"] .marketplace-form label{color:#425852}
+    body[data-theme="light"] .marketplace-form input{background:#fff;color:var(--ink)}
+    body[data-theme="light"] .part-request-card{background:#f7faf8}
+    body[data-theme="light"] .auth-screen{background:radial-gradient(ellipse at 15% 10%,#dcebe5,transparent 40%),#edf3f1}
+    body[data-theme="light"] .auth-google{background:#f2f6f4}
+    body[data-theme="light"] .local-db-notice{color:#735f2b;background:#f8f2df;border-color:#e8d9a8}
+    body[data-theme="light"] .lane{background:#e8f0ed}
+    body[data-theme="light"] .os-card{background:#fff}
+    body[data-theme="light"] .filter,body[data-theme="light"] .auth-field input,body[data-theme="light"] .auth-field select,body[data-theme="light"] .booking-form input,body[data-theme="light"] .booking-form select,body[data-theme="light"] .restock-form input,body[data-theme="light"] .restock-form select{background:#fff;color:var(--ink)}
+    body[data-theme="light"] .module-table tr:hover td{background:#f1f6f4}
+    @media(max-width:800px){.content{width:calc(100% - 220px)}.sidebar{width:220px}.stock-summary{grid-template-columns:1fr}}
+    @media(max-width:650px){.shell{display:flex;flex-direction:column}.sidebar{position:relative;width:100%;height:auto;min-height:0;flex-direction:row;align-items:center;overflow-x:auto;padding:12px}.sidebar .brand{flex:none;padding:0 12px}.sidebar .nav-label,.sidebar .side-foot{display:none}.sidebar .nav-item{width:auto;flex:none;white-space:nowrap;margin:0 3px;padding:10px}.content{width:100%;flex:1}.stock-summary{grid-template-columns:1fr}}
+    @keyframes rise-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:650px){.marketplace-heading{flex-direction:column}.marketplace-form{grid-template-columns:1fr}.marketplace-form .wide{grid-column:auto}.part-request-card{grid-template-columns:64px 1fr}.part-request-card img{width:64px;height:64px}.part-request-status{grid-column:2;text-align:left}.client-hero{border-radius:19px}}
+</style>
+<script>
+    const data=JSON.parse(localStorage.getItem('garageProData')||'{"clients":[],"vehicles":[],"parts":[]}');
+    function persist(){localStorage.setItem('garageProData',JSON.stringify(data));refreshNotifications()}
+    const os=[];
+    const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+    function renderRows(type,query=''){const rows=data[type].filter(r=>r.join(' ').toLowerCase().includes(query.toLowerCase()));const id=type==='clients'?'clientRows':type==='vehicles'?'vehicleRows':'stockRows';document.getElementById(id).innerHTML=rows.map((r,i)=>type==='clients'?`<tr><td><div class="person"><span class="avatar">${(r[0]||'?').split(' ').map(x=>x[0]).slice(0,2).join('')}</span><b>${esc(r[0])}</b></div></td><td>${esc(r[1]||'')}</td><td>${r[2]||0} veículo(s)</td><td>${r[3]||'Ainda não'}</td><td>${r[4]||'R$ 0,00'}</td><td><span class="status green">Ativo</span></td><td class="row-actions"><button data-edit="${type}" data-index="${i}">Editar</button><button class="delete" data-delete="${type}" data-index="${i}">Excluir</button></td></tr>`:type==='vehicles'?`<tr><td><b>${esc(r[0])}</b></td><td><span class="tag">${esc(r[1])}</span></td><td>${esc(r[2])}</td><td>${esc(r[3])} km</td><td>${r[4]||'Ainda não'}</td><td><span class="status green">Ativo</span></td><td class="row-actions"><button data-edit="${type}" data-index="${i}">Editar</button><button class="delete" data-delete="${type}" data-index="${i}">Excluir</button></td></tr>`:`<tr><td><b>${esc(r[0])}</b></td><td>${esc(r[1])}</td><td>${esc(r[2])}</td><td class="${Number(r[3])<Number(r[4])?'low':''}">${r[3]} un.</td><td>${r[4]} un.</td><td>R$ ${Number(r[5]||0).toFixed(2).replace('.',',')}</td><td><span class="status ${r[3]===0?'red':r[3]<r[4]?'orange':'green'}">${r[3]===0?'Zerado':r[3]<r[4]?'Estoque baixo':'Normal'}</span></td><td class="row-actions"><button data-edit="${type}" data-index="${i}">Editar</button><button class="delete" data-delete="${type}" data-index="${i}">Excluir</button></td></tr>`).join('')||`<tr><td colspan="8" class="empty">Nenhum registro cadastrado. Use o botão acima para começar.</td></tr>`;document.querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>openModal(b.dataset.edit,Number(b.dataset.index)));document.querySelectorAll('[data-delete]').forEach(b=>b.onclick=()=>removeRecord(b.dataset.delete,Number(b.dataset.index)))}
+    function removeRecord(type,index){if(!confirm('Excluir este registro?'))return;data[type].splice(index,1);persist();renderRows(type);toast('Registro excluído.')}
+    function renderKanban(){const lanes=['Aguardando','Aprovado','Em execução','Finalizado'];document.getElementById('kanban').innerHTML=lanes.map(l=>`<div class="lane"><div class="lane-head"><b>${l}</b><span>${os.filter(x=>x.status===l).length}</span></div>${os.filter(x=>x.status===l).map(x=>`<article class="os-card"><b>${x.id} · ${x.title}</b><p>${x.client}</p><div class="os-meta"><span>Responsável</span><span class="avatar">${x.mechanic}</span></div></article>`).join('')}</div>`).join('')}
+    const fields={client:[['name','Nome completo','wide'],['doc','CPF ou CNPJ',''],['phone','Telefone / WhatsApp',''],['email','E-mail',''],['notes','Observações','wide']],vehicle:[['plate','Placa',''],['model','Marca e modelo',''],['year','Ano',''],['km','Quilometragem',''],['owner','Cliente','wide']],part:[['name','Nome da peça','wide'],['sku','SKU / código interno',''],['category','Categoria',''],['stock','Estoque atual',''],['minimum','Estoque mínimo',''],['price','Preço de venda (R$)','']],appointment:[['client','Cliente',''],['vehicle','Veículo / placa',''],['date','Data',''],['time','Horário',''],['service','Serviço','wide']],os:[['client','Cliente',''],['vehicle','Veículo',''],['diagnosis','Diagnóstico inicial','wide'],['mechanic','Mecânico responsável',''],['delivery','Previsão de entrega','']]};
+    const labels={client:'Novo cliente',vehicle:'Novo veículo',part:'Nova peça',appointment:'Novo agendamento',os:'Nova ordem de serviço',budget:'Novo orçamento',expense:'Nova despesa'};
+    let editing={type:null,index:null};const requiredFields={client:['name'],vehicle:['plate','model','owner'],part:['name','sku']};function openModal(type,index=null){editing={type,index};document.getElementById('modalTitle').textContent=index===null?(labels[type]||'Novo cadastro'):'Editar cadastro';const fs=fields[type]||fields.os;const old=index===null?null:data[type]?.[index];document.getElementById('formFields').innerHTML=fs.map(([id,label,wide],i)=>`<label class="${wide}">${label}<input name="${id}" value="${old?esc(old[i]||''):''}" ${id==='date'||id==='delivery'?'type="date"':''} ${requiredFields[type]?.includes(id)?'required':''}></label>`).join('');document.getElementById('modalBg').classList.add('show')}
+    function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400)}
+    function showView(id){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));document.querySelectorAll('.nav-item').forEach(b=>b.classList.toggle('active',b.dataset.view===id));document.getElementById('crumb').textContent=document.querySelector(`[data-view="${id}"]`)?.innerText.trim()||id; if(id==='clients')renderRows('clients');if(id==='vehicles')renderRows('vehicles');if(id==='stock')renderRows('parts');if(id==='os')renderKanban()}
+    document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>showView(b.dataset.view)));document.querySelectorAll('[data-new]').forEach(b=>b.addEventListener('click',()=>openModal(b.dataset.new)));document.querySelectorAll('[data-filter]').forEach(input=>input.addEventListener('input',()=>renderRows(input.dataset.filter,input.value)));document.getElementById('globalSearch').addEventListener('input',e=>{const q=e.target.value.toLowerCase();if(!q)return;const found=data.vehicles.find(v=>v.join(' ').toLowerCase().includes(q))||data.clients.find(v=>v.join(' ').toLowerCase().includes(q));if(found)showView(found.length===5?'vehicles':'clients')});document.getElementById('closeModal').onclick=document.getElementById('cancelModal').onclick=()=>document.getElementById('modalBg').classList.remove('show');document.getElementById('modalForm').addEventListener('submit',e=>{e.preventDefault();const values=[...new FormData(e.target).values()];const type=editing.type;const collection=type==='client'?'clients':type==='vehicle'?'vehicles':type==='part'?'parts':type;let record;if(type==='client')record=[values[0],values[2],0,'Ainda não','R$ 0,00'];if(type==='vehicle')record=[values[1],values[0],values[4],values[3],'Ainda não'];if(type==='part')record=[values[0],values[1],values[2],Number(values[3]||0),Number(values[4]||0),Number(values[5]||0)];if(record){if(editing.index===null)data[collection].push(record);else data[collection][editing.index]=record;persist();document.getElementById('modalBg').classList.remove('show');renderRows(collection);toast('Cadastro salvo com sucesso.')}});document.getElementById('stockIn').addEventListener('click',()=>openModal('part'));
+    function normalizeSearch(value){return String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim()}
+    function matchesSearch(value,query){const text=normalizeSearch(value);return normalizeSearch(query).split(/\s+/).filter(Boolean).every(token=>text.includes(token))}
+    function searchResultsFor(query){
+        const results=[];
+        document.querySelectorAll('.nav-item[data-view]').forEach(button=>{
+            const title=button.querySelector('span:last-child').textContent.trim();
+            if(matchesSearch(title,query))results.push({title,detail:'Abrir seção',category:'Seção',view:button.dataset.view});
+        });
+        const createLabels={client:'Novo cliente',vehicle:'Novo veículo',part:'Nova peça'};
+        document.querySelectorAll('[data-new]').forEach(button=>{
+            const type=button.dataset.new;
+            if(createLabels[type]&&matchesSearch(`${createLabels[type]} ${button.textContent}`,query)){
+                results.push({title:createLabels[type],detail:'Abrir formulário de cadastro',category:'Ação',create:type});
+            }
+        });
+        const collections=[
+            {type:'clients',view:'clients',category:'Cliente'},
+            {type:'vehicles',view:'vehicles',category:'Veículo'},
+            {type:'parts',view:'stock',category:'Peça'}
+        ];
+        collections.forEach(({type,view,category})=>data[type].forEach(record=>{
+            if(matchesSearch(record.join(' '),query))results.push({title:String(record[0]||'Sem nome'),detail:record.slice(1,4).filter(Boolean).join(' · '),category,view,filterable:type});
+        }));
+        customerAppointments.forEach(request=>{
+            const text=Object.values(request).join(' ');
+            if(matchesSearch(text,query))results.push({title:request.name||'Pedido de cliente',detail:`${request.service||'Agendamento'} · ${request.vehicle||'Veículo não informado'}`,category:'Pedido',view:'customerRequests',filterable:'customerRequests'});
+        });
+        return results.slice(0,8);
+    }
+    function runSearchResult(result){
+        document.getElementById('searchResults').classList.remove('open');
+        document.getElementById('globalSearch').value=result.title;
+        if(result.create){openModal(result.create);return}
+        showView(result.view);
+        if(!result.filterable)return;
+        if(result.filterable==='customerRequests'){
+            const input=document.getElementById('customerRequestSearch');
+            input.value=result.title;
+            renderCustomerRequests(result.title);
+            return;
+        }
+        const input=document.querySelector(`[data-filter="${result.filterable}"]`);
+        if(input){input.value=result.title;renderRows(result.filterable,result.title)}
+    }
+    function initGlobalSearch(){
+        const input=document.getElementById('globalSearch');
+        const replacement=input.cloneNode(true);
+        input.replaceWith(replacement);
+        const results=document.createElement('div');
+        results.className='search-results';
+        results.id='searchResults';
+        results.setAttribute('role','listbox');
+        replacement.setAttribute('aria-controls',results.id);
+        replacement.setAttribute('aria-autocomplete','list');
+        replacement.parentElement.append(results);
+        const render=()=>{
+            const query=replacement.value.trim();
+            if(!query){results.classList.remove('open');results.replaceChildren();return}
+            const matches=searchResultsFor(query);
+            results.replaceChildren();
+            if(!matches.length){
+                const empty=document.createElement('div');
+                empty.className='search-empty';
+                empty.textContent='Nenhum resultado encontrado.';
+                results.append(empty);
+            }else matches.forEach((result,index)=>{
+                const button=document.createElement('button');
+                button.type='button';
+                button.className='search-result';
+                button.setAttribute('role','option');
+                button.dataset.resultIndex=String(index);
+                const copy=document.createElement('span');
+                copy.className='search-result-copy';
+                const title=document.createElement('b');
+                title.textContent=result.title;
+                const detail=document.createElement('small');
+                detail.textContent=result.detail;
+                copy.append(title,detail);
+                const category=document.createElement('span');
+                category.className='search-result-type';
+                category.textContent=result.category;
+                button.append(copy,category);
+                button.addEventListener('click',()=>runSearchResult(result));
+                results.append(button);
+            });
+            results.classList.add('open');
+        };
+        replacement.addEventListener('input',render);
+        replacement.addEventListener('keydown',event=>{
+            if(event.key==='Escape'){results.classList.remove('open');return}
+            if(event.key==='Enter'){
+                const first=searchResultsFor(replacement.value.trim())[0];
+                if(first){event.preventDefault();runSearchResult(first)}
+            }
+        });
+        document.addEventListener('click',event=>{
+            if(!replacement.parentElement?.contains(event.target))results.classList.remove('open');
+        });
+    }
+    function showEmptyWorkspace(){if(data.clients.length||data.vehicles.length||data.parts.length||os.length)return;const dashboard=document.getElementById('dashboard');dashboard.querySelector('h1').textContent='Comece por aqui.';dashboard.querySelector('.sub').textContent='Cadastre seus dados e acompanhe sua operação neste painel.';const firstAction=dashboard.querySelector('[data-new="os"]');if(firstAction){firstAction.dataset.new='client';firstAction.textContent='+ Cadastrar cliente'}dashboard.querySelectorAll('.kpi strong').forEach((item,i)=>item.textContent=i===0||i===3?'R$ 0,00':i===4?'0 itens':'0');const layout=dashboard.querySelector('.layout');if(layout)layout.innerHTML='<div class="panel empty">Seu painel vai ganhar vida conforme você cadastrar clientes, veículos, serviços e ordens de serviço.</div>';const alerts=dashboard.querySelector('.alerts');if(alerts)alerts.innerHTML='<div class="panel-head"><div><h2>Central de atenção</h2><p>Nenhum alerta por enquanto</p></div></div>';const agenda=document.querySelector('#agenda .panel');if(agenda)agenda.innerHTML='<div class="empty">Nenhum agendamento cadastrado. Use "+ Novo agendamento" para começar.</div>';const budgets=document.querySelector('#budgets tbody');if(budgets)budgets.innerHTML='<tr><td colspan="6" class="empty">Nenhum orçamento cadastrado.</td></tr>';const finance=document.querySelector('#finance tbody');if(finance)finance.innerHTML='<tr><td colspan="5" class="empty">Nenhum lançamento financeiro cadastrado.</td></tr>'}
+    showEmptyWorkspace();renderRows('clients');renderRows('vehicles');renderRows('parts');
+
+    function clearSampleData(){
+        const dashboard=document.getElementById('dashboard');
+        const today=new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'2-digit',month:'short',year:'numeric'}).format(new Date());
+        dashboard.querySelector('.eyebrow').textContent=today.toUpperCase();
+        dashboard.querySelector('h1').textContent='Painel da oficina';
+        dashboard.querySelector('.sub').textContent='Os indicadores serão atualizados quando houver dados reais.';
+        dashboard.querySelectorAll('.kpi').forEach((card,index)=>{
+            card.querySelector('strong').textContent=index===0||index===3?'R$ 0,00':index===4?'0 itens':'0';
+            card.querySelector('.trend').textContent='Sem movimentações registradas';
+        });
+        dashboard.querySelector('.layout').innerHTML='<div class="panel empty">Ainda não há movimentações suficientes para exibir indicadores.</div>';
+        dashboard.querySelector('.alerts').innerHTML='<div class="panel-head"><div><h2>Central de atenção</h2><p>Nenhum alerta cadastrado</p></div></div>';
+
+        const agenda=document.querySelector('#agenda .panel');
+        document.querySelector('#agenda .page-head .sub').textContent='Nenhum agendamento cadastrado.';
+        agenda.querySelectorAll('.agenda-row').forEach(row=>row.remove());
+        const agendaEmpty=agenda.querySelector('.empty')||document.createElement('div');
+        agendaEmpty.className='empty';
+        agendaEmpty.textContent='Nenhum agendamento cadastrado.';
+        if(!agendaEmpty.isConnected)agenda.append(agendaEmpty);
+
+        document.querySelector('#budgets tbody').innerHTML='<tr><td colspan="6" class="empty">Nenhum orçamento cadastrado.</td></tr>';
+        document.querySelectorAll('#finance .kpi').forEach(card=>{
+            card.querySelector('strong').textContent='R$ 0,00';
+            card.querySelector('.trend').textContent='Sem lançamentos registrados';
+        });
+        document.querySelector('#finance tbody').innerHTML='<tr><td colspan="5" class="empty">Nenhum lançamento financeiro cadastrado.</td></tr>';
+        document.querySelector('#reports .layout').innerHTML='<div class="panel empty">Nenhum serviço ou indicador cadastrado para exibir relatórios.</div>';
+    }
+    clearSampleData();
+
+    const serviceCatalog=[
+        {name:'Revisão preventiva',description:'Inspeção geral e manutenção preventiva.'},
+        {name:'Troca de óleo e filtros',description:'Troca do óleo do motor e dos filtros.'},
+        {name:'Freios',description:'Inspeção e manutenção do sistema de freios.'},
+        {name:'Alinhamento e balanceamento',description:'Ajuste de direção e balanceamento das rodas.'},
+        {name:'Diagnóstico eletrônico',description:'Leitura de falhas e avaliação eletrônica do veículo.'}
+    ];
+    const loadStored=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key)||JSON.stringify(fallback))}catch(error){console.error(`Não foi possível ler ${key} do armazenamento local.`,error);return fallback}};
+    let accounts=loadStored('mekanikUsers',[]);
+    let customerAppointments=loadStored('mekanikAppointments',[]);
+    let customerPartRequests=loadStored('mekanikPartRequests',[]);
+    let pendingPartRequest=null;
+    let authMode='login';
+    let profilePhotoData='';
+    const authScreen=document.getElementById('authScreen');
+    const authForm=document.getElementById('authForm');
+    const authError=document.getElementById('authError');
+    const currentUserKey='mekanikCurrentUser';
+    const saveAccounts=()=>localStorage.setItem('mekanikUsers',JSON.stringify(accounts));
+    const saveCustomerAppointments=()=>{localStorage.setItem('mekanikAppointments',JSON.stringify(customerAppointments));refreshNotifications()};
+    const setAuthError=message=>{authError.textContent=message};
+    const initials=name=>String(name||'?').trim().split(/\s+/).map(part=>part[0]).slice(0,2).join('').toUpperCase()||'?';
+    function setAvatar(element,user){
+        if(!element)return;
+        element.innerHTML=user.photo?`<img src="${esc(user.photo)}" alt="">`:esc(initials(user.name));
+    }
+    function setTheme(theme){
+        const selected=theme==='light'?'light':'dark';
+        document.body.dataset.theme=selected;
+        localStorage.setItem('mekanikTheme',selected);
+        document.querySelectorAll('.theme-toggle').forEach(button=>{
+            button.textContent=selected==='light'?'☾':'☀';
+            button.setAttribute('aria-pressed',String(selected==='light'));
+            button.title=selected==='light'?'Ativar modo escuro':'Ativar modo claro';
+            button.setAttribute('aria-label',button.title);
+        });
+    }
+    function makeButton(text,className,handler){
+        const button=document.createElement('button');
+        button.type='button';
+        button.className=className;
+        button.textContent=text;
+        button.addEventListener('click',handler);
+        return button;
+    }
+    function openProfileEditor(){
+        const email=sessionStorage.getItem(currentUserKey);
+        const activeAccount=accounts.find(account=>account.email===email);
+        if(!activeAccount){toast('Entre novamente para editar seu perfil.');return}
+        const form=document.getElementById('profileForm');
+        form.elements.name.value=activeAccount.name;
+        form.elements.email.value=activeAccount.email;
+        form.elements.currentPassword.value='';
+        form.elements.newPassword.value='';
+        form.elements.confirmPassword.value='';
+        profilePhotoData=activeAccount.photo||'';
+        document.getElementById('profilePhoto').value='';
+        document.getElementById('profileError').textContent='';
+        setAvatar(document.getElementById('profilePreview'),{name:activeAccount.name,photo:profilePhotoData});
+        const modal=document.getElementById('profileModal');
+        modal.classList.add('show');
+        modal.setAttribute('aria-hidden','false');
+    }
+    function closeProfileEditor(){
+        const modal=document.getElementById('profileModal');
+        modal.classList.remove('show');
+        modal.setAttribute('aria-hidden','true');
+    }
+    async function readProfilePhoto(file){
+        if(!file.type.startsWith('image/'))throw new Error('Escolha um arquivo de imagem.');
+        if(file.size>8*1024*1024)throw new Error('A imagem deve ter no máximo 8 MB.');
+        const source=await new Promise((resolve,reject)=>{
+            const reader=new FileReader();
+            reader.onload=()=>resolve(String(reader.result));
+            reader.onerror=()=>reject(new Error('Não foi possível ler o arquivo escolhido.'));
+            reader.readAsDataURL(file);
+        });
+        const image=await new Promise((resolve,reject)=>{
+            const picture=new Image();
+            picture.onload=()=>resolve(picture);
+            picture.onerror=()=>reject(new Error('Não foi possível abrir esta imagem.'));
+            picture.src=source;
+        });
+        const scale=Math.min(1,512/Math.max(image.width,image.height));
+        const canvas=document.createElement('canvas');
+        canvas.width=Math.max(1,Math.round(image.width*scale));
+        canvas.height=Math.max(1,Math.round(image.height*scale));
+        const context=canvas.getContext('2d');
+        if(!context)throw new Error('Não foi possível preparar a imagem neste navegador.');
+        context.drawImage(image,0,0,canvas.width,canvas.height);
+        return canvas.toDataURL('image/jpeg',0.82);
+    }
+    function installAccountControls(){
+        const sidebarFooter=document.querySelector('.side-foot');
+        sidebarFooter.querySelector('.logout-button').remove();
+        const topActions=document.querySelector('.top-actions');
+        const themeToggle=makeButton('☀','circle-btn theme-toggle',()=>setTheme(document.body.dataset.theme==='light'?'dark':'light'));
+        topActions.insertBefore(themeToggle,topActions.querySelector('.circle-btn'));
+        const notificationButton=topActions.querySelector('.circle-btn:not(.theme-toggle)');
+        const notificationWrap=document.createElement('div');
+        notificationWrap.className='notification-wrap';
+        notificationButton.textContent='🔔';
+        notificationButton.setAttribute('aria-label','Notificações');
+        notificationButton.setAttribute('aria-haspopup','true');
+        notificationButton.setAttribute('aria-expanded','false');
+        const notificationMenu=document.createElement('div');
+        notificationMenu.className='notification-menu';
+        notificationMenu.id='notificationMenu';
+        notificationMenu.setAttribute('role','menu');
+        notificationMenu.innerHTML='<h3>Notificações</h3><div class="notification-list"></div>';
+        notificationButton.setAttribute('aria-controls',notificationMenu.id);
+        notificationButton.replaceWith(notificationWrap);
+        notificationWrap.append(notificationButton,notificationMenu);
+        notificationButton.addEventListener('click',()=>{
+            const open=notificationMenu.classList.toggle('open');
+            notificationButton.setAttribute('aria-expanded',String(open));
+            closeAccountMenu();
+        });
+        notificationMenu.querySelector('.notification-list').addEventListener('click',event=>{
+            const item=event.target.closest('[data-notification-view]');
+            if(!item)return;
+            notificationMenu.classList.remove('open');
+            notificationButton.setAttribute('aria-expanded','false');
+            showView(item.dataset.notificationView);
+            if(item.dataset.notificationFilter){
+                const input=item.dataset.notificationView==='customerRequests'
+                    ?document.getElementById('customerRequestSearch')
+                    :document.querySelector('[data-filter="parts"]');
+                if(input){input.value=item.dataset.notificationFilter;if(item.dataset.notificationView==='customerRequests')renderCustomerRequests(input.value);else renderRows('parts',input.value)}
+            }
+        });
+        const adminAvatar=document.querySelector('.top-actions .avatar');
+        adminAvatar.id='adminTopAvatar';
+        installAccountMenu(adminAvatar,false);
+        initGlobalSearch();
+
+        const clientActions=document.querySelector('.client-topbar > div:last-child');
+        clientActions.classList.add('account-actions');
+        const clientAvatar=document.createElement('span');
+        clientAvatar.className='avatar';
+        clientAvatar.id='clientAvatar';
+        clientActions.prepend(clientAvatar);
+        const clientLogout=clientActions.querySelector('.logout-button');
+        clientLogout.remove();
+        clientActions.prepend(makeButton('☀','circle-btn theme-toggle',()=>setTheme(document.body.dataset.theme==='light'?'dark':'light')));
+        installAccountMenu(clientAvatar,true);
+
+        const clientContent=document.querySelector('.client-content');
+        const bookingPanel=document.querySelector('.booking-panel');
+        bookingPanel.id='bookingPanel';
+        document.querySelector('.my-bookings').id='myBookingsPanel';
+        const overview=document.createElement('section');
+        overview.className='panel client-overview';
+        overview.innerHTML='<div><h2>Seu espaço Mekanik</h2><p>Agende serviços, acompanhe seus pedidos e mantenha seus dados atualizados.</p></div><div class="client-quick-actions"></div>';
+        const quickActions=overview.querySelector('.client-quick-actions');
+        quickActions.append(
+            makeButton('＋ Agendar serviço','primary',()=>bookingPanel.scrollIntoView({behavior:'smooth',block:'start'})),
+            makeButton('▤ Meus pedidos','ghost',()=>document.getElementById('myBookingsPanel').scrollIntoView({behavior:'smooth',block:'start'}))
+        );
+        clientContent.insertBefore(overview,document.querySelector('.client-section-title'));
+        setTheme(localStorage.getItem('mekanikTheme')||'dark');
+        document.getElementById('customerRequestSearch').addEventListener('input',event=>renderCustomerRequests(event.currentTarget.value));
+        document.addEventListener('click',event=>{
+            if(!event.target.closest('.account-menu-wrap'))closeAccountMenu();
+            if(!event.target.closest('.notification-wrap')){
+                const menu=document.getElementById('notificationMenu');
+                const button=document.querySelector('.notification-wrap .circle-btn');
+                menu.classList.remove('open');
+                button.setAttribute('aria-expanded','false');
+            }
+        });
+        document.addEventListener('keydown',event=>{
+            if(event.key==='Escape'){
+                closeAccountMenu();
+                document.getElementById('notificationMenu').classList.remove('open');
+                document.querySelector('.notification-wrap .circle-btn').setAttribute('aria-expanded','false');
+                document.getElementById('searchResults').classList.remove('open');
+            }
+        });
+        refreshNotifications();
+    }
+    function closeAccountMenu(){
+        document.querySelectorAll('.account-menu.open').forEach(menu=>menu.classList.remove('open'));
+        document.querySelectorAll('.account-trigger').forEach(button=>button.setAttribute('aria-expanded','false'));
+    }
+    function installAccountMenu(avatar,isClient){
+        const wrap=document.createElement('div');
+        wrap.className='account-menu-wrap';
+        const trigger=document.createElement('button');
+        trigger.type='button';
+        trigger.className='avatar account-trigger';
+        trigger.id=avatar.id;
+        trigger.setAttribute('aria-label','Abrir menu da conta');
+        trigger.setAttribute('aria-haspopup','true');
+        trigger.setAttribute('aria-expanded','false');
+        trigger.textContent=avatar.textContent;
+        avatar.replaceWith(wrap);
+        const menu=document.createElement('div');
+        menu.className='account-menu';
+        menu.id=isClient?'clientAccountMenu':'adminAccountMenu';
+        menu.setAttribute('role','menu');
+        trigger.setAttribute('aria-controls',menu.id);
+        menu.setAttribute('aria-labelledby',trigger.id);
+        const shortcuts=isClient
+            ?'<button class="menu-action" data-account-shortcut="booking" type="button">Agendar serviço</button><button class="menu-action" data-account-shortcut="bookings" type="button">Meus pedidos</button>'
+            :'<button class="menu-action" data-account-view="clients" type="button">Clientes</button><button class="menu-action" data-account-view="agenda" type="button">Agenda</button><button class="menu-action" data-account-view="stock" type="button">Estoque</button><button class="menu-action" data-account-view="customerRequests" type="button">Pedidos de clientes</button>';
+        menu.innerHTML=`<div class="account-menu-heading"><b class="account-menu-name">${isClient?'Minha conta':'Administrador'}</b><small class="account-menu-email"></small></div><button class="menu-action" data-account-profile type="button">Editar perfil</button><div class="menu-divider"></div>${shortcuts}<div class="menu-divider"></div><button class="menu-action logout-button" type="button">Sair da conta</button>`;
+        menu.querySelectorAll('button').forEach(button=>button.setAttribute('role','menuitem'));
+        wrap.append(trigger,menu);
+        trigger.addEventListener('click',()=>{
+            const wasOpen=menu.classList.contains('open');
+            closeAccountMenu();
+            document.querySelectorAll('.notification-menu.open').forEach(item=>item.classList.remove('open'));
+            const open=!wasOpen;
+            if(open)menu.classList.add('open');
+            trigger.setAttribute('aria-expanded',String(open));
+        });
+        menu.querySelector('[data-account-profile]').addEventListener('click',()=>{closeAccountMenu();openProfileEditor()});
+        menu.querySelectorAll('[data-account-view]').forEach(button=>button.addEventListener('click',()=>{closeAccountMenu();showView(button.dataset.accountView)}));
+        menu.querySelectorAll('[data-account-shortcut]').forEach(button=>button.addEventListener('click',()=>{
+            closeAccountMenu();
+            const target=button.dataset.accountShortcut==='booking'?'bookingPanel':'myBookingsPanel';
+            document.getElementById(target).scrollIntoView({behavior:'smooth',block:'start'});
+        }));
+    }
+    function updateAccountMenu(user){
+        const menu=document.getElementById(user.role==='client'?'clientAccountMenu':'adminAccountMenu');
+        if(!menu)return;
+        menu.querySelector('.account-menu-name').textContent=user.name;
+        menu.querySelector('.account-menu-email').textContent=user.email;
+    }
+    function refreshNotifications(){
+        const button=document.querySelector('.notification-wrap .circle-btn');
+        const menu=document.getElementById('notificationMenu');
+        if(!button||!menu)return;
+        const items=[
+            ...data.parts.filter(part=>Number(part[4])>0&&Number(part[3])<=Number(part[4])).map(part=>({icon:'⚠',title:`Estoque baixo: ${part[0]}`,detail:`${part[3]} un. disponíveis · mínimo ${part[4]}`,view:'stock',filter:part[0]})),
+            ...customerAppointments.filter(request=>request.status==='Pendente').map(request=>({icon:'◷',title:`Pedido pendente: ${request.name}`,detail:`${request.service} · ${request.vehicle}`,view:'customerRequests',filter:request.name}))
+        ];
+        let badge=button.querySelector('.notification-badge');
+        if(!badge){badge=document.createElement('span');badge.className='notification-badge';button.append(badge)}
+        badge.textContent=String(items.length);
+        badge.hidden=items.length===0;
+        const list=menu.querySelector('.notification-list');
+        list.replaceChildren();
+        if(!items.length){
+            const empty=document.createElement('div');
+            empty.className='notification-empty';
+            empty.textContent='Tudo em dia. Nenhuma notificação.';
+            list.append(empty);
+            return;
+        }
+        items.forEach(item=>{
+            const button=document.createElement('button');
+            button.type='button';
+            button.className='notification-item';
+            button.setAttribute('role','menuitem');
+            button.dataset.notificationView=item.view;
+            button.dataset.notificationFilter=item.filter;
+            const icon=document.createElement('span');
+            icon.className='notification-icon';
+            icon.textContent=item.icon;
+            const copy=document.createElement('span');
+            copy.className='notification-copy';
+            const title=document.createElement('b');
+            title.textContent=item.title;
+            const detail=document.createElement('small');
+            detail.textContent=item.detail;
+            copy.append(title,detail);
+            button.append(icon,copy);
+            list.append(button);
+        });
+    }
+    document.getElementById('adminAvatar').textContent='AD';
+    document.getElementById('adminIdentity').textContent='Administrador';
+    document.querySelector('.top-actions .avatar').textContent='AD';
+    installAccountControls();
+
+    function renderServiceCatalog(){
+        document.getElementById('serviceCards').innerHTML=serviceCatalog.map(service=>`<article class="service-card"><h3>${esc(service.name)}</h3><p>${esc(service.description)}</p></article>`).join('');
+        document.getElementById('clientService').innerHTML=serviceCatalog.map(service=>`<option value="${esc(service.name)}">${esc(service.name)}</option>`).join('');
+    }
+
+    function renderMyBookings(email){
+        const own=customerAppointments.map((item,index)=>({item,index})).filter(({item})=>item.email===email);
+        document.getElementById('myBookings').innerHTML=own.length?own.map(({item,index})=>`<article class="booking-item"><div class="booking-item-copy"><b>${esc(item.service)}</b> · ${esc(item.vehicle)}<small>${esc(item.date)} às ${esc(item.time)}</small></div><div class="booking-item-actions"><span class="status ${item.status==='Confirmado'?'green':item.status==='Cancelado'?'red':'pending'}">${esc(item.status)}</span>${item.status==='Pendente'?`<button class="ghost" data-cancel-booking="${index}" type="button">Cancelar</button>`:''}</div></article>`).join(''):'<p class="sub">Você ainda não pediu nenhum agendamento. Use “Agendar serviço” para fazer seu primeiro pedido.</p>';
+    }
+
+    function renderPartRequests(email){
+        const container=document.getElementById('partRequests');
+        const own=customerPartRequests.filter(request=>request.email===email);
+        if(!own.length){
+            container.innerHTML='';
+            return;
+        }
+        container.innerHTML=own.map(request=>`<article class="part-request-card">${request.photo?`<img src="${esc(request.photo)}" alt="Foto enviada da peça">`:'<div class="part-request-placeholder" aria-hidden="true">⌕</div>'}<div><h3>${esc(request.partName)}</h3><p>${esc(request.vehicleModel)} · Pedido enviado</p></div><span class="part-request-status">${esc(request.status)}<br><small>Ofertas reais precisam de empresas conectadas</small></span></article>`).join('');
+    }
+
+    async function readPartPhoto(file){
+        if(!file.type.startsWith('image/'))throw new Error('Escolha um arquivo de imagem.');
+        if(file.size>5*1024*1024)throw new Error('A foto deve ter no máximo 5 MB.');
+        const source=await new Promise((resolve,reject)=>{
+            const reader=new FileReader();
+            reader.onload=()=>resolve(String(reader.result));
+            reader.onerror=()=>reject(new Error('Não foi possível ler a foto escolhida.'));
+            reader.readAsDataURL(file);
+        });
+        const image=await new Promise((resolve,reject)=>{
+            const picture=new Image();
+            picture.onload=()=>resolve(picture);
+            picture.onerror=()=>reject(new Error('Não foi possível abrir esta imagem.'));
+            picture.src=source;
+        });
+        const scale=Math.min(1,900/Math.max(image.width,image.height));
+        const canvas=document.createElement('canvas');
+        canvas.width=Math.max(1,Math.round(image.width*scale));
+        canvas.height=Math.max(1,Math.round(image.height*scale));
+        const context=canvas.getContext('2d');
+        if(!context)throw new Error('Não foi possível preparar a imagem neste navegador.');
+        context.drawImage(image,0,0,canvas.width,canvas.height);
+        return canvas.toDataURL('image/jpeg',0.76);
+    }
+
+    function savePartRequest(draft,user){
+        const request={...draft,id:`${Date.now()}-${Math.random().toString(16).slice(2)}`,name:user.name,email:user.email,status:'Aguardando ofertas',createdAt:new Date().toISOString()};
+        try{
+            const updated=[...customerPartRequests,request];
+            localStorage.setItem('mekanikPartRequests',JSON.stringify(updated));
+            customerPartRequests=updated;
+        }catch(error){
+            console.error('Não foi possível salvar o pedido de peça no armazenamento local.',error);
+            document.getElementById('partRequestFeedback').textContent='Não foi possível salvar o pedido. O armazenamento local pode estar cheio; remova uma imagem ou libere espaço e tente novamente.';
+            toast('Falha ao salvar o pedido.');
+            return false;
+        }
+        renderPartRequests(user.email);
+        document.getElementById('partSearchForm').reset();
+        document.getElementById('partPhotoPreview').classList.remove('visible');
+        document.getElementById('partRequestFeedback').textContent='Pedido salvo neste navegador. Para receber cotações reais de várias empresas, o Mekanik precisa de um banco compartilhado.';
+        toast('Pedido salvo na demonstração local.');
+        return true;
+    }
+
+    function showGuest(){
+        document.body.classList.add('client-mode','guest-mode');
+        authScreen.classList.add('hidden');
+        authScreen.setAttribute('aria-hidden','true');
+        document.getElementById('clientName').textContent='visitante';
+        document.getElementById('bookingDate').min=new Date().toLocaleDateString('en-CA');
+        renderServiceCatalog();
+        document.getElementById('partRequestFeedback').textContent='Sem login: pesquise e preencha o pedido. O login só será solicitado ao enviar.';
+    }
+
+    function openAuthScreen(message=''){
+        authMode='login';
+        updateAuthMode();
+        authScreen.classList.remove('hidden');
+        authScreen.setAttribute('aria-hidden','false');
+        if(message)setAuthError(message);
+    }
+
+    function renderCustomerRequests(query=''){
+        const body=document.getElementById('customerRequestRows');
+        const matching=customerAppointments.map((item,index)=>({item,index})).filter(({item})=>matchesSearch(Object.values(item).join(' '),query));
+        if(!matching.length){body.innerHTML=`<tr><td colspan="7" class="empty">${query?'Nenhum pedido encontrado.':'Ainda não há pedidos de clientes.'}</td></tr>`;return}
+        body.innerHTML=matching.map(({item,index})=>`<tr><td>${esc(item.name)}<br><small>${esc(item.email)}</small></td><td>${esc(item.service)}</td><td>${esc(item.vehicle)}</td><td>${esc(item.date)}</td><td>${esc(item.time)}</td><td><span class="status ${item.status==='Confirmado'?'green':'pending'}">${esc(item.status)}</span></td><td>${item.status==='Pendente'?`<button class="primary customer-request-action" data-confirm-request="${index}" type="button">Confirmar</button>`:''}</td></tr>`).join('');
+    }
+
+    function enterApp(user){
+        if(user.role!=='client'){
+            sessionStorage.removeItem(currentUserKey);
+            showGuest();
+            return;
+        }
+        sessionStorage.setItem(currentUserKey,user.email);
+        updateAccountMenu(user);
+        authScreen.classList.add('hidden');
+        authScreen.setAttribute('aria-hidden','true');
+        document.body.classList.add('client-mode');
+        document.body.classList.remove('guest-mode');
+        document.getElementById('clientName').textContent=user.name;
+        setAvatar(document.getElementById('clientAvatar'),user);
+        document.getElementById('bookingDate').min=new Date().toLocaleDateString('en-CA');
+        renderServiceCatalog();
+        renderMyBookings(user.email);
+        renderPartRequests(user.email);
+        if(pendingPartRequest){
+            if(savePartRequest(pendingPartRequest,user))pendingPartRequest=null;
+        }
+    }
+
+    function leaveAccount(){
+        sessionStorage.removeItem(currentUserKey);
+        document.body.classList.remove('client-mode');
+        authMode='login';
+        authForm.reset();
+        updateAuthMode();
+        showGuest();
+    }
+
+    function updateAuthMode(){
+        const registering=authMode==='register';
+        authScreen.classList.toggle('registering',registering);
+        document.getElementById('authTitle').textContent=registering?'Criar sua conta':'Entre na sua conta';
+        document.getElementById('authDescription').textContent=registering?'Cadastre-se como cliente.':'Acesse sua área de cliente.';
+        document.getElementById('authSubmit').textContent=registering?'Criar conta':'Entrar';
+        document.getElementById('authSwitch').textContent=registering?'Já tem conta? Entrar':'Ainda não tem conta? Cadastre-se';
+        document.getElementById('authNote').textContent=registering?'Demonstração local. As contas ficam salvas somente neste navegador; não use senhas reais.':'Demonstração local. Os dados ficam salvos somente neste navegador; não use senhas reais.';
+        authForm.elements.name.required=registering;
+        setAuthError('');
+    }
+
+    document.getElementById('authSwitch').addEventListener('click',()=>{authMode=authMode==='login'?'register':'login';updateAuthMode()});
+    document.getElementById('guestContinue').addEventListener('click',()=>{
+        authScreen.classList.add('hidden');
+        authScreen.setAttribute('aria-hidden','true');
+        setAuthError('');
+    });
+    document.getElementById('guestLogin').addEventListener('click',()=>openAuthScreen());
+    document.getElementById('googleLogin').addEventListener('click',()=>toast('Para ativar o Google, falta criar e configurar o projeto Firebase Authentication.'));
+    document.getElementById('partPhoto').addEventListener('change',async event=>{
+        const file=event.currentTarget.files[0];
+        const preview=document.getElementById('partPhotoPreview');
+        if(!file){preview.classList.remove('visible');return}
+        try{
+            const photo=await readPartPhoto(file);
+            preview.src=photo;
+            preview.classList.add('visible');
+        }catch(error){
+            event.currentTarget.value='';
+            preview.removeAttribute('src');
+            preview.classList.remove('visible');
+            document.getElementById('partRequestFeedback').textContent=error.message;
+        }
+    });
+    document.getElementById('partSearchForm').addEventListener('submit',async event=>{
+        event.preventDefault();
+        const form=event.currentTarget;
+        const values=new FormData(form);
+        const photoFile=values.get('photo');
+        let photo='';
+        if(photoFile instanceof File&&photoFile.size){
+            try{
+                photo=await readPartPhoto(photoFile);
+            }catch(error){
+                document.getElementById('partRequestFeedback').textContent=error.message;
+                return;
+            }
+        }
+        const draft={
+            partName:String(values.get('partName')).trim(),
+            vehicleModel:String(values.get('vehicleModel')).trim(),
+            photo
+        };
+        if(!draft.partName||!draft.vehicleModel){
+            document.getElementById('partRequestFeedback').textContent='Informe o nome da peça e o modelo do veículo.';
+            return;
+        }
+        const userEmail=sessionStorage.getItem(currentUserKey);
+        const user=accounts.find(account=>account.email===userEmail&&account.role==='client');
+        if(!user){
+            pendingPartRequest=draft;
+            openAuthScreen('Entre ou crie uma conta de cliente para enviar o pedido. O que você preencheu será mantido nesta sessão.');
+            return;
+        }
+        savePartRequest(draft,user);
+    });
+    document.getElementById('closeProfile').addEventListener('click',closeProfileEditor);
+    document.getElementById('cancelProfile').addEventListener('click',closeProfileEditor);
+    document.getElementById('profileModal').addEventListener('click',event=>{
+        if(event.target===event.currentTarget)closeProfileEditor();
+    });
+    document.addEventListener('keydown',event=>{
+        if(event.key==='Escape'&&document.getElementById('profileModal').classList.contains('show'))closeProfileEditor();
+    });
+    document.getElementById('removeProfilePhoto').addEventListener('click',()=>{
+        profilePhotoData='';
+        setAvatar(document.getElementById('profilePreview'),{name:document.getElementById('profileForm').elements.name.value});
+        document.getElementById('profilePhoto').value='';
+        document.getElementById('profileError').textContent='';
+    });
+    document.getElementById('profilePhoto').addEventListener('change',async event=>{
+        const file=event.currentTarget.files[0];
+        if(!file)return;
+        const error=document.getElementById('profileError');
+        error.textContent='';
+        try{
+            profilePhotoData=await readProfilePhoto(file);
+            setAvatar(document.getElementById('profilePreview'),{name:document.getElementById('profileForm').elements.name.value,photo:profilePhotoData});
+        }catch(problem){
+            error.textContent=problem.message;
+            event.currentTarget.value='';
+        }
+    });
+    document.getElementById('profileForm').addEventListener('submit',event=>{
+        event.preventDefault();
+        const account=accounts.find(item=>item.email===sessionStorage.getItem(currentUserKey));
+        const error=document.getElementById('profileError');
+        if(!account){error.textContent='Sua sessão expirou. Entre novamente para editar o perfil.';return}
+        const values=new FormData(event.currentTarget);
+        const name=String(values.get('name')).trim();
+        const email=String(values.get('email')).trim().toLowerCase();
+        const currentPassword=String(values.get('currentPassword'));
+        const newPassword=String(values.get('newPassword'));
+        const confirmPassword=String(values.get('confirmPassword'));
+        if(!name||!email){error.textContent='Preencha seu nome e e-mail.';return}
+        if(accounts.some(item=>item!==account&&item.email===email)){error.textContent='Este e-mail já está associado a outra conta.';return}
+        if(currentPassword||newPassword||confirmPassword){
+            if(!currentPassword||!newPassword||!confirmPassword){error.textContent='Para trocar a senha, preencha a senha atual, a nova senha e a confirmação.';return}
+            if(currentPassword!==account.password){error.textContent='A senha atual está incorreta.';return}
+            if(newPassword.length<6){error.textContent='A nova senha precisa ter pelo menos 6 caracteres.';return}
+            if(newPassword!==confirmPassword){error.textContent='A confirmação da nova senha não confere.';return}
+            account.password=newPassword;
+        }
+        const previousEmail=account.email;
+        account.name=name;
+        account.email=email;
+        if(profilePhotoData)account.photo=profilePhotoData;
+        else delete account.photo;
+        if(account.role==='client'){
+            customerAppointments.forEach(request=>{
+                if(request.email===previousEmail){request.email=email;request.name=name}
+            });
+            saveCustomerAppointments();
+        }
+        saveAccounts();
+        sessionStorage.setItem(currentUserKey,email);
+        if(account.role==='client'){
+            updateAccountMenu(account);
+            document.getElementById('clientName').textContent=name;
+            setAvatar(document.getElementById('clientAvatar'),account);
+            renderMyBookings(email);
+        }else{
+             updateAccountMenu(account);
+            setAvatar(document.getElementById('adminAvatar'),account);
+            setAvatar(document.getElementById('adminTopAvatar'),account);
+            document.getElementById('adminIdentity').innerHTML=`${esc(name)}<br><small>Administrador</small>`;
+            document.querySelector('#dashboard h1').textContent=`Bom dia, ${name.split(/\s+/)[0]}.`;
+            renderCustomerRequests();
+        }
+        closeProfileEditor();
+        toast('Perfil atualizado com sucesso.');
+    });
+    authForm.addEventListener('submit',event=>{
+        event.preventDefault();
+        const values=new FormData(authForm);
+        const email=String(values.get('email')).trim().toLowerCase();
+        const password=String(values.get('password'));
+        if(authMode==='register'){
+            const name=String(values.get('name')).trim();
+            if(!name){setAuthError('Digite seu nome completo.');return}
+            if(accounts.some(account=>account.email===email)){setAuthError('Já existe uma conta com este e-mail.');return}
+            const account={name,email,password,role:'client'};
+            accounts.push(account);
+            saveAccounts();
+            enterApp(account);
+            toast('Conta criada com sucesso.');
+            return;
+        }
+        const account=accounts.find(item=>item.email===email&&item.password===password&&item.role==='client');
+        if(!account){setAuthError('E-mail ou senha incorretos.');return}
+        enterApp(account);
+    });
+
+    document.getElementById('bookingForm').addEventListener('submit',event=>{
+        event.preventDefault();
+        const userEmail=sessionStorage.getItem(currentUserKey);
+        const user=accounts.find(account=>account.email===userEmail&&account.role==='client');
+        if(!user){leaveAccount();setAuthError('Entre na conta de cliente para solicitar um horário.');return}
+        const formValues=new FormData(event.currentTarget);
+        const request={name:user.name,email:user.email,service:String(formValues.get('service')),vehicle:String(formValues.get('vehicle')).trim(),date:String(formValues.get('date')),time:String(formValues.get('time')),status:'Pendente'};
+        if(request.date<new Date().toLocaleDateString('en-CA')){toast('Escolha hoje ou uma data futura.');return}
+        customerAppointments.push(request);
+        saveCustomerAppointments();
+        renderMyBookings(user.email);
+        event.currentTarget.reset();
+        toast('Pedido enviado. Aguarde a confirmação da oficina.');
+    });
+
+    document.getElementById('myBookings').addEventListener('click',event=>{
+        const button=event.target.closest('[data-cancel-booking]');
+        if(!button)return;
+        const request=customerAppointments[Number(button.dataset.cancelBooking)];
+        const userEmail=sessionStorage.getItem(currentUserKey);
+        if(!request||request.email!==userEmail){toast('Este pedido não foi encontrado.');return}
+        if(request.status!=='Pendente'){toast('Somente pedidos pendentes podem ser cancelados.');return}
+        if(!confirm('Deseja cancelar este pedido de agendamento?'))return;
+        request.status='Cancelado';
+        saveCustomerAppointments();
+        renderMyBookings(userEmail);
+        toast('Pedido cancelado.');
+    });
+
+    document.getElementById('customerRequestRows').addEventListener('click',event=>{
+        const button=event.target.closest('[data-confirm-request]');
+        if(!button)return;
+        const request=customerAppointments[Number(button.dataset.confirmRequest)];
+        if(!request){toast('Este pedido não foi encontrado.');return}
+        request.status='Confirmado';
+        saveCustomerAppointments();
+        renderCustomerRequests();
+    });
+    document.querySelectorAll('.logout-button').forEach(button=>button.addEventListener('click',leaveAccount));
+    document.querySelector('[data-view="customerRequests"]').addEventListener('click',renderCustomerRequests);
+    updateAuthMode();
+    renderServiceCatalog();
+    const savedEmail=sessionStorage.getItem(currentUserKey)||localStorage.getItem('mekanikRememberedUser');
+    const savedUser=accounts.find(account=>account.email===savedEmail&&account.role==='client');
+    if(savedUser)enterApp(savedUser);
+    else{
+        if(savedEmail){
+            sessionStorage.removeItem(currentUserKey);
+            localStorage.removeItem('mekanikRememberedUser');
+        }
+        showGuest();
+    }
+    
+</script>
+<script>
+    const marketplaceNavigation = document.querySelector('.sidebar');
+    if (marketplaceNavigation) {
+        const sectionLabel = document.createElement('div');
+        sectionLabel.className = 'nav-label';
+        sectionLabel.textContent = 'Conectar';
+
+        const marketplaceLink = document.createElement('a');
+        marketplaceLink.className = 'nav-item connect-link';
+        marketplaceLink.href = 'belfo.html';
+        marketplaceLink.title = 'Buscar produtos e serviços';
+        marketplaceLink.setAttribute('aria-label', 'Buscar produtos e serviços no Perto');
+        marketplaceLink.style.textDecoration = 'none';
+        marketplaceLink.textContent = 'Buscar produtos';
+
+        const sidebarFooter = marketplaceNavigation.querySelector('.side-foot');
+        marketplaceNavigation.insertBefore(sectionLabel, sidebarFooter);
+        marketplaceNavigation.insertBefore(marketplaceLink, sidebarFooter);
+    }
+
+    const authCard = document.querySelector('#authScreen .auth-card');
+    const authNote = document.getElementById('authNote');
+    if (authCard && authNote) {
+        const publicMarketplaceLink = document.createElement('a');
+        publicMarketplaceLink.className = 'auth-switch';
+        publicMarketplaceLink.href = 'belfo.html';
+        publicMarketplaceLink.textContent = 'Buscar produtos e serviços no Perto';
+        publicMarketplaceLink.style.textDecoration = 'none';
+        authCard.insertBefore(publicMarketplaceLink, authNote);
+    }
+</script>
+<script>
+    (()=>{
+        const stockView=document.getElementById('stock');
+        const stockBody=document.getElementById('stockRows');
+        const stockHeader=stockView.querySelector('thead tr');
+        const actionHeading=document.createElement('th');
+        actionHeading.textContent='Ações';
+        stockHeader.append(actionHeading);
+        const summary=document.createElement('div');
+        summary.className='stock-summary';
+        summary.innerHTML='<article class="stock-summary-card"><span>Produtos cadastrados</span><strong id="stockProductCount">0</strong></article><article class="stock-summary-card"><span>Unidades disponíveis</span><strong id="stockUnitCount">0</strong></article><article class="stock-summary-card"><span>Precisam de reposição</span><strong id="stockLowCount">0</strong></article>';
+        stockView.insertBefore(summary,stockView.querySelector('.panel'));
+
+        const modal=document.createElement('div');
+        modal.className='modal-bg';
+        modal.id='restockModal';
+        modal.setAttribute('aria-hidden','true');
+        modal.innerHTML='<section class="modal" role="dialog" aria-modal="true" aria-labelledby="restockTitle"><div class="modal-head"><h2 id="restockTitle">Registrar reposição</h2><button class="close" type="button" aria-label="Fechar">×</button></div><form id="restockForm" class="restock-form"><label>Peça<select name="part" required></select></label><p class="restock-current" id="restockCurrent"></p><label>Quantidade recebida<input name="quantity" type="number" min="1" step="1" placeholder="Ex.: 10" required></label><p class="restock-error" id="restockError" role="alert"></p><div class="modal-foot"><button class="ghost" type="button" data-restock-cancel>Cancelar</button><button class="primary" type="submit">Adicionar ao estoque</button></div></form></section>';
+        document.body.append(modal);
+        const restockForm=modal.querySelector('#restockForm');
+        const partSelect=restockForm.elements.part;
+        const currentLabel=modal.querySelector('#restockCurrent');
+        const closeModal=()=>{
+            modal.classList.remove('show');
+            modal.setAttribute('aria-hidden','true');
+        };
+        const refreshSummary=()=>{
+            const parts=data.parts;
+            document.getElementById('stockProductCount').textContent=String(parts.length);
+            document.getElementById('stockUnitCount').textContent=String(parts.reduce((sum,part)=>sum+Math.max(0,Number(part[3])||0),0));
+            document.getElementById('stockLowCount').textContent=String(parts.filter(part=>Number(part[3])<=Number(part[4])).length);
+        };
+        const openRestock=(selectedIndex=null)=>{
+            const parts=data.parts;
+            partSelect.replaceChildren();
+            if(!parts.length){
+                toast('Cadastre uma peça antes de registrar uma reposição.');
+                openModal('part');
+                return;
+            }
+            parts.forEach((part,index)=>{
+                const option=document.createElement('option');
+                option.value=String(index);
+                option.textContent=`${part[0]} · ${part[1]} · ${part[3]} un.`;
+                partSelect.append(option);
+            });
+            if(selectedIndex!==null)partSelect.value=String(selectedIndex);
+            currentLabel.textContent=`Saldo atual: ${parts[Number(partSelect.value)]?.[3]??0} unidades`;
+            modal.querySelector('#restockError').textContent='';
+            restockForm.elements.quantity.value='';
+            modal.classList.add('show');
+            modal.setAttribute('aria-hidden','false');
+            restockForm.elements.quantity.focus();
+        };
+        const renderStockRows=(query='')=>{
+            const normalized=normalizeSearch(query);
+            const matching=data.parts.map((part,index)=>({part,index})).filter(({part})=>matchesSearch(part.join(' '),normalized));
+            stockBody.innerHTML=matching.length?matching.map(({part,index})=>{
+                const quantity=Number(part[3])||0;
+                const minimum=Number(part[4])||0;
+                const status=quantity===0?'Zerado':quantity<=minimum?'Estoque baixo':'Normal';
+                const statusClass=quantity===0?'red':quantity<=minimum?'orange':'green';
+                return `<tr><td><b>${esc(part[0])}</b></td><td>${esc(part[1])}</td><td>${esc(part[2])}</td><td class="${quantity<=minimum?'low':''}">${quantity} un.</td><td>${minimum} un.</td><td>R$ ${(Number(part[5])||0).toFixed(2).replace('.',',')}</td><td><span class="status ${statusClass}">${status}</span></td><td class="row-actions"><button type="button" data-restock="${index}">Repor</button><button type="button" data-edit="part" data-index="${index}">Editar</button><button type="button" class="delete" data-delete="parts" data-index="${index}">Excluir</button></td></tr>`;
+            }).join(''):'<tr><td colspan="8" class="empty">Nenhuma peça encontrada. Cadastre uma peça ou ajuste a busca.</td></tr>';
+            refreshSummary();
+        };
+        const originalRenderRows=window.renderRows;
+        window.renderRows=(type,query='')=>{
+            if(type==='parts'){renderStockRows(query);return}
+            originalRenderRows(type,query);
+        };
+        const originalOpenModal=window.openModal;
+        window.openModal=(type,index=null)=>{
+            if(type!=='part'){originalOpenModal(type,index);return}
+            const part=index===null?[]:data.parts[index];
+            if(index!==null&&!part)return;
+            editing={type,index};
+            document.getElementById('modalTitle').textContent=index===null?'Nova peça':'Editar peça';
+            document.getElementById('formFields').innerHTML=fields.part.map(([id,label,wide],fieldIndex)=>{
+                const numeric=['stock','minimum','price'].includes(id);
+                const inputType=numeric?'number':'text';
+                const step=id==='price'?'0.01':'1';
+                const minimumValue=numeric?'min="0"':'';
+                return `<label class="${wide}">${label}<input name="${id}" type="${inputType}" ${numeric?`step="${step}" ${minimumValue}`:''} value="${esc(part[fieldIndex]??'')}" ${requiredFields.part.includes(id)?'required':''}></label>`;
+            }).join('');
+            document.getElementById('modalBg').classList.add('show');
+        };
+        renderStockRows();
+        const previousStockIn=stockView.querySelector('#stockIn');
+        const stockIn=previousStockIn.cloneNode(true);
+        previousStockIn.replaceWith(stockIn);
+        stockIn.textContent='＋ Repor estoque';
+        stockIn.addEventListener('click',()=>openRestock());
+        stockBody.addEventListener('click',event=>{
+            const restockButton=event.target.closest('[data-restock]');
+            if(restockButton)openRestock(Number(restockButton.dataset.restock));
+            const editButton=event.target.closest('[data-edit]');
+            if(editButton)openModal('part',Number(editButton.dataset.index));
+            const deleteButton=event.target.closest('[data-delete]');
+            if(deleteButton)removeRecord('parts',Number(deleteButton.dataset.index));
+        });
+        partSelect.addEventListener('change',()=>{
+            const part=data.parts[Number(partSelect.value)];
+            currentLabel.textContent=part?`Saldo atual: ${part[3]} unidades`:'';
+        });
+        modal.querySelector('.close').addEventListener('click',closeModal);
+        modal.querySelector('[data-restock-cancel]').addEventListener('click',closeModal);
+        modal.addEventListener('click',event=>{if(event.target===modal)closeModal()});
+        restockForm.addEventListener('submit',event=>{
+            event.preventDefault();
+            const part=data.parts[Number(partSelect.value)];
+            const amount=Number(restockForm.elements.quantity.value);
+            if(!part||!Number.isInteger(amount)||amount<1){
+                modal.querySelector('#restockError').textContent='Escolha uma peça e informe uma quantidade inteira maior que zero.';
+                return;
+            }
+            part[3]=(Number(part[3])||0)+amount;
+            persist();
+            renderStockRows(stockView.querySelector('[data-filter="parts"]').value);
+            closeModal();
+            toast(`Reposição registrada: ${part[0]} agora tem ${part[3]} unidades.`);
+        });
+        document.getElementById('modalForm').addEventListener('submit',()=>setTimeout(()=>{
+            if(editing.type==='part')renderStockRows(stockView.querySelector('[data-filter="parts"]').value);
+        },0));
+        document.getElementById('modalBg').addEventListener('click',event=>{
+            if(event.target===event.currentTarget)setTimeout(()=>renderStockRows(stockView.querySelector('[data-filter="parts"]').value),0);
+        });
+        stockView.querySelector('[data-new="part"]').addEventListener('click',()=>setTimeout(refreshSummary,0));
+        restockForm.addEventListener('keydown',event=>{if(event.key==='Escape')closeModal()});
+        refreshSummary();
+
+        const authForm=document.getElementById('authForm');
+        const rememberAccount=document.getElementById('rememberAccount');
+        authForm.addEventListener('submit',()=>{
+            const email=sessionStorage.getItem('mekanikCurrentUser');
+            if(!email)return;
+            if(rememberAccount.checked)localStorage.setItem('mekanikRememberedUser',email);
+            else localStorage.removeItem('mekanikRememberedUser');
+        });
+        document.addEventListener('click',event=>{
+            if(event.target.closest('.logout-button'))localStorage.removeItem('mekanikRememberedUser');
+        });
+        document.getElementById('googleLogin').title='Login Google precisa ser configurado com um projeto de autenticação.';
+    })();
+</script>
+</body>
+</html>
